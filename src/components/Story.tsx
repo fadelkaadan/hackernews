@@ -3,6 +3,7 @@ import { fetchStory } from "../api/hackernews";
 import styled, { keyframes } from "styled-components";
 import Author from "./Author";
 import Score from "./Score";
+import Time from "./Time";
 
 interface StoryProps {
   storyId: number;
@@ -83,6 +84,7 @@ const Story = ({ storyId }: StoryProps) => {
             </Link>
             <Score score={story.score} />
             <Author name={story.by} />
+            <Time time={story.time} />
           </ContentWrapper>
         </Wrapper>
       );
