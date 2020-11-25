@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { fetchStory } from "../api/hackernews";
 import styled, { keyframes } from "styled-components";
 import Author from "./Author";
-import Score from "./Score";
 import Time from "./Time";
+import Link from "./Link";
+import Interactions from "./Interactions";
 
 interface StoryProps {
   storyId: number;
@@ -13,7 +14,7 @@ interface IStory {
   by: string;
   descendants: number;
   id: number;
-  kids: number;
+  kids: number[];
   score: number;
   text: string;
   time: number;
@@ -55,7 +56,7 @@ const Sideline = styled.div`
   border-bottom-left-radius: 15px;
 `;
 
-const Link = styled.a`
+const StyledLink = styled.a`
   color: #e7e7e7;
   text-decoration: none;
 `;
@@ -63,7 +64,7 @@ const Link = styled.a`
 const Title = styled.h4``;
 
 const ContentWrapper = styled.div`
-  margin: 0 10px;
+  padding: 15px;
 `;
 
 const Story = ({ storyId }: StoryProps) => {
@@ -79,12 +80,13 @@ const Story = ({ storyId }: StoryProps) => {
         <Wrapper>
           <Sideline />
           <ContentWrapper>
-            <Link href={story.url} target="blank">
-              <Title>{story.title}</Title>
-            </Link>
-            <Score score={story.score} />
-            <Author name={story.by} />
             <Time time={story.time} />
+            <StyledLink href={story.url} target="blank">
+              <Title>{story.title}</Title>
+              <Link src={story.url} />
+            </StyledLink>
+            <Interactions score={story.score} comments={story.kids}/>
+            <Author name={story.by} />
           </ContentWrapper>
         </Wrapper>
       );
