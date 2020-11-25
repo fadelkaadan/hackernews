@@ -1,14 +1,21 @@
 import React from "react";
+import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowAltCircleUp } from "@fortawesome/free-regular-svg-icons";
 
 interface ScoreProps {
-  score: number;
+  count: number;
 }
 
-const Score = ({ score }: ScoreProps) => {
+const Wrapper = styled.div`
+  font-size: 12px;
+`
+
+const Score = ({ count }: ScoreProps) => {
   return (
-    <div>
-      <p>{score} points</p>
-    </div>
+    <Wrapper>
+      <p><FontAwesomeIcon icon={faArrowAltCircleUp}/> {count}</p>
+    </Wrapper>
   );
 };
 
