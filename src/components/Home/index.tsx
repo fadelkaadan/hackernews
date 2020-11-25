@@ -32,7 +32,7 @@ const Home = () => {
     <Wrapper>
       <StoriesContainer>
         {storyIds.map((id) => (
-          <Story storyId={id} />
+          <Story key={id} storyId={id} />
         ))}
       </StoriesContainer>
     </Wrapper>
