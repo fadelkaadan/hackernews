@@ -41,11 +41,11 @@ const Wrapper = styled.div`
   width: 500px;
   margin: 0px 25px 25px 25px;
   display: flex;
-  background-color: ${(props) => props.theme.main.background};
+  background-color: ${(props) => props.theme.cards.background};
 `;
 
 const Sideline = styled.div`
-  width: 5%;
+  min-width: 5%;
   height: 100%;
   /* background: linear-gradient(-45deg, #020024, #680979, #00d4ff); */
   /* background: linear-gradient(-45deg, #1CB5E0 0%, #000851 100%); */
@@ -56,15 +56,21 @@ const Sideline = styled.div`
   border-bottom-left-radius: 15px;
 `;
 
-const StyledLink = styled.a`
-  color: #e7e7e7;
+const StyledLink = styled.div`
+  color: ${(props) => props.theme.main.textColor};
+  margin-top: 10px;
+`;
+
+const Title = styled.a`
+  color:${(props) => props.theme.main.textColor};
   text-decoration: none;
 `;
 
-const Title = styled.h4``;
-
 const ContentWrapper = styled.div`
-  padding: 15px;
+  padding: 15px 15px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const Story = ({ storyId }: StoryProps) => {
@@ -81,12 +87,11 @@ const Story = ({ storyId }: StoryProps) => {
           <Sideline />
           <ContentWrapper>
             <Time time={story.time} />
-            <StyledLink href={story.url} target="blank">
-              <Title>{story.title}</Title>
+            <StyledLink>
+              <Title href={story.url} target="blank">{story.title}</Title>
               <Link src={story.url} />
             </StyledLink>
-            <Interactions score={story.score} comments={story.kids}/>
-            <Author name={story.by} />
+            <Interactions score={story.score} comments={story.kids} />
           </ContentWrapper>
         </Wrapper>
       );
