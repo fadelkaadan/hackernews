@@ -11,7 +11,8 @@ const Wrapper = styled.div`
 
 const Link = ({ src }: LinkProps) => {
   const getHostname = (url: string) => {
-    return new URL(url).hostname;
+    const hostname = new URL(url).hostname.replace("www.", "");
+    return hostname;
   };
 
   return (
