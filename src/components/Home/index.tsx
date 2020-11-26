@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   justify-content: center;
   width: 100%;
   min-height: 100vh;
-  background-color: #1d1d1d;
+  background-color: ${(props) => props.theme.main.background};
 `;
 
 const StoriesContainer = styled.div`
