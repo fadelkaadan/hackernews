@@ -1,5 +1,4 @@
 ## Technologies
-Project is created with:
 * Typescript
 * React 
 * Styled-Components 💅
