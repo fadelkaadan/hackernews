@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
+import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
 import copy from "copy-to-clipboard";
 
 interface LinkProps {
@@ -18,7 +19,7 @@ const Button = styled.button`
   cursor: pointer;
   background-color: transparent;
   border: none;
-  color: ${(props) => props.theme.main.textColor};
+  color: ${(props) => props.theme.main.text.secondary};
 
   &:focus {
     outline: none;
@@ -26,20 +27,30 @@ const Button = styled.button`
   }
 
   &::after {
-    content: ""; /* This is necessary for the pseudo element to work. */ 
-    display: block; /* This will put the pseudo element on its own line. */
-    width: 0%; /* Change this to whatever width you want to have before hover. */
-    padding-top: 3px; /* This creates some space between the element and the border. */
-    border-bottom: 2px solid #785bf7; /* This creates the border. Replace black with whatever color you want. */
-    transition: .5s; /* This establishes the amount of time in seconds the animation should take from start to finish */
+    content: "";
+    display: block;
+    width: 0%;
+    padding-top: 3px;
+    border-bottom: 2px solid #785bf7;
+    transition: 0.5s;
   }
 
   &:hover::after {
-    width: 100%; /* This will be the new width of your border when on hover */
+    width: 100%;
+  }
+`;
+
+const ButtonSuccess = styled(Button)`
+  color: #83ad6c;
+  &::after {
+    border-bottom: 2px solid #83ad6c;
   }
 `;
 
 const Link = ({ src }: LinkProps) => {
+  const [icon, setIcon] = useState(faCopy);
+  const [didCopy, setDidCopy] = useState(false);
+
   const getHostname = (url: string) => {
     const hostname = new URL(url).hostname.replace("www.", "");
     return hostname;
@@ -47,15 +58,30 @@ const Link = ({ src }: LinkProps) => {
 
   const addToClipboard = (text: string) => {
     copy(text);
+    setIcon(faCheckCircle);
+    setDidCopy(true);
+    setTimeout(() => {
+      setIcon(faCopy);
+      setDidCopy(false);
+    }, 1500);
   };
 
-  return (
-    <Wrapper>
+  const renderButton = () => {
+    if (didCopy) {
+      return (
+        <ButtonSuccess onClick={() => addToClipboard(src)}>
+          <FontAwesomeIcon icon={icon} /> Copied
+        </ButtonSuccess>
+      );
+    }
+    return (
       <Button onClick={() => addToClipboard(src)}>
-        <FontAwesomeIcon icon={faCopy} /> {getHostname(src)}
+        <FontAwesomeIcon icon={icon} /> {getHostname(src)}
       </Button>
-    </Wrapper>
-  );
+    );
+  };
+
+  return <Wrapper>{renderButton()}</Wrapper>;
 };
 
 export default Link;
