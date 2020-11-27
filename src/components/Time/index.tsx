@@ -11,6 +11,7 @@ interface TimeProps {
 
 const Wrapper = styled.div`
   font-size: 12px;
+  color: ${(props) => props.theme.main.text.secondary};
 `
 
 const Time = ({ time }: TimeProps) => {

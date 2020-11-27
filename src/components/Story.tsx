@@ -56,12 +56,12 @@ const Sideline = styled.div`
 `;
 
 const StyledLink = styled.div`
-  color: ${(props) => props.theme.main.textColor};
+  color: ${(props) => props.theme.main.text.primary};
   margin-top: 10px;
 `;
 
 const Title = styled.a`
-  color:${(props) => props.theme.main.textColor};
+  color:${(props) => props.theme.main.text.primary};
   text-decoration: none;
 `;
 
