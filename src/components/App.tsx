@@ -6,7 +6,10 @@ import "fontsource-roboto";
 const theme = {
   main: {
     background: "#1d1d1d",
-    textColor: "#e7e7e7",
+    text: {
+      primary: "#e7e7e7",
+      secondary: "#cccccc"
+    }
   },
   cards: {
     background: "#2b2b2b",
