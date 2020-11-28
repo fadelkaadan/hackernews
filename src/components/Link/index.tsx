@@ -32,7 +32,7 @@ const Button = styled.button`
     width: 0%;
     padding-top: 3px;
     border-bottom: 2px solid #785bf7;
-    transition: 0.5s;
+    transition: 0.2s;
   }
 
   &:hover::after {
@@ -44,6 +44,10 @@ const ButtonSuccess = styled(Button)`
   color: #83ad6c;
   &::after {
     border-bottom: 2px solid #83ad6c;
+  }
+
+  &:hover::after {
+    width: 0%;
   }
 `;
 
