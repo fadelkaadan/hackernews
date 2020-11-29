@@ -11,6 +11,7 @@ interface InteractionsProps {
 const Wrapper = styled.div`
   font-size: 12px;
   display: flex;
+  color: ${(props) => props.theme.main.text.primary};
 `;
 
 const Interactions = ({ score, comments }: InteractionsProps) => {
