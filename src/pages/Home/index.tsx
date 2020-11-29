@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { fetchStoryIds, TOP_STORIES } from "../../api/hackernews";
-import Story from "../Story";
+import Story from "../../components/Story";
 
 const Wrapper = styled.div`
   display: flex;

@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
-import Home from "./Home";
+import Home from "../pages/Home";
 import "fontsource-roboto";
 
 const theme = {
