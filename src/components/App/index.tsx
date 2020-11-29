@@ -1,8 +1,8 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import GlobalStyle from "../theme/Globalstyle";
-import { darkTheme, lightTheme } from "../theme";
-import Home from "../pages/Home";
+import GlobalStyle from "../../theme/Globalstyle";
+import { darkTheme, lightTheme } from "../../theme";
+import Home from "../../pages/Home";
 import "fontsource-roboto";
 
 const App = () => {

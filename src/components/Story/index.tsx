@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { fetchStory } from "../api/hackernews";
 import styled, { keyframes } from "styled-components";
-import Time from "./Time";
-import Link from "./Link";
-import Interactions from "./Interactions";
+import { fetchStory } from "../../api/hackernews";
+import Time from "../Time";
+import Link from "../Link";
+import Interactions from "../Interactions";
 
 interface StoryProps {
   storyId: number;
