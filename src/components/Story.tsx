@@ -41,6 +41,7 @@ const Wrapper = styled.div`
   margin: 0px 25px 25px 25px;
   display: flex;
   background-color: ${(props) => props.theme.cards.background};
+  box-shadow: 0px 1px 15px ${(props) => props.theme.cards.shadow};
 `;
 
 const Sideline = styled.div`
