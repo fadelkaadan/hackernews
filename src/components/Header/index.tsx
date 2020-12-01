@@ -2,6 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import DarkmodeToggle from "../DarkmodeToggle";
 
+interface HeaderProps {
+  theme: string;
+  themeToggler: () => void;
+}
+
 const Wrapper = styled.div`
   width: 100%;
   padding: 5px 0;
@@ -11,7 +16,7 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const Header = ({ theme, themeToggler }: any) => {
+const Header = ({ theme, themeToggler }: HeaderProps) => {
   return (
     <Wrapper>
       <DarkmodeToggle theme={theme} handleClick={themeToggler} />
