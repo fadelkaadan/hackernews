@@ -1,16 +1,20 @@
 import React from "react";
 import styled from "styled-components";
+import DarkmodeToggle from "../DarkmodeToggle";
 
 const Wrapper = styled.div`
-  height: 5vh;
   width: 100%;
-  background-color: red;
+  padding: 5px 0;
+  background-color: ${(props) => props.theme.cards.background};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-const Header = ({ themeToggler }: any) => {
+const Header = ({ theme, themeToggler }: any) => {
   return (
     <Wrapper>
-      <button onClick={themeToggler}>Toggle</button>
+      <DarkmodeToggle theme={theme} handleClick={themeToggler} />
     </Wrapper>
   );
 };
