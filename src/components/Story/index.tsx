@@ -62,7 +62,7 @@ const StyledLink = styled.div`
 `;
 
 const Title = styled.a`
-  color:${(props) => props.theme.main.text.primary};
+  color: ${(props) => props.theme.main.text.primary};
   text-decoration: none;
 `;
 
@@ -88,7 +88,7 @@ const Story = ({ storyId }: StoryProps) => {
           <ContentWrapper>
             <Time time={story.time} />
             <StyledLink>
-              <Title href={story.url} target="blank">{story.title}</Title>
+              <Title href={story.url}>{story.title}</Title>
               <Link src={story.url} />
             </StyledLink>
             <Interactions score={story.score} comments={story.kids} />
