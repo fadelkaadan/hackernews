@@ -25,3 +25,21 @@ export const lightTheme = {
     shadow: "#b3b3b3",
   },
 };
+
+export const col_1 = {
+  story: {
+    size: "1000px",
+  },
+  sideLine: {
+    size: "3%",
+  },
+};
+
+export const col_2 = {
+  story: {
+    size: "500px",
+  },
+  sideLine: {
+    size: "3%",
+  },
+};
