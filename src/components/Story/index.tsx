@@ -37,7 +37,7 @@ const animation = keyframes`
 const Wrapper = styled.div`
   border-radius: 15px;
   color: #e7e7e7;
-  width: 500px;
+  width: ${(props) => props.theme.story.size};
   margin: 0px 25px 25px 25px;
   display: flex;
   background-color: ${(props) => props.theme.cards.background};
@@ -45,7 +45,7 @@ const Wrapper = styled.div`
 `;
 
 const Sideline = styled.div`
-  min-width: 5%;
+  min-width: ${(props) => props.theme.sideLine.size};
   height: 100%;
   /* background: linear-gradient(-45deg, #020024, #680979, #00d4ff); */
   /* background: linear-gradient(-45deg, #1CB5E0 0%, #000851 100%); */
