@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { fetchStory } from "../../api/hackernews";
-import Time from "../Time";
-import Link from "../Link";
-import Interactions from "../Interactions";
+import Content from "../Content";
 
 interface StoryProps {
   storyId: number;
@@ -47,30 +45,11 @@ const Wrapper = styled.div`
 const Sideline = styled.div`
   min-width: ${(props) => props.theme.sideLine.size};
   height: 100%;
-  /* background: linear-gradient(-45deg, #020024, #680979, #00d4ff); */
-  /* background: linear-gradient(-45deg, #1CB5E0 0%, #000851 100%); */
   background: linear-gradient(-45deg, #fc466b 0%, #3f5efb 100%);
   background-size: 400% 400%;
   animation: ${animation} 15s ease infinite;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
-`;
-
-const StyledLink = styled.div`
-  color: ${(props) => props.theme.main.text.primary};
-  margin-top: 10px;
-`;
-
-const Title = styled.a`
-  color: ${(props) => props.theme.main.text.primary};
-  text-decoration: none;
-`;
-
-const ContentWrapper = styled.div`
-  padding: 15px 15px 5px 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 `;
 
 const Story = ({ storyId }: StoryProps) => {
@@ -85,14 +64,7 @@ const Story = ({ storyId }: StoryProps) => {
       return (
         <Wrapper>
           <Sideline />
-          <ContentWrapper>
-            <Time time={story.time} />
-            <StyledLink>
-              <Title href={story.url}>{story.title}</Title>
-              <Link src={story.url} />
-            </StyledLink>
-            <Interactions score={story.score} comments={story.kids} />
-          </ContentWrapper>
+          <Content story={story}/>
         </Wrapper>
       );
     }
