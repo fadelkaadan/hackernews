@@ -7,22 +7,29 @@ interface CommentsProps {
   comments: number[];
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.p`
   font-size: 12px;
-  margin-left: 10px;
-`
+  color: ${(props) => props.theme.main.text.secondary};
+  border: 1px solid ${(props) => props.theme.main.text.secondary};
+  border-radius: 5px;
+  padding: 3px 4px;
+  cursor: pointer;
+
+  &:hover {
+    color: ${(props) => props.theme.main.text.primary};
+    border: 1px solid ${(props) => props.theme.main.text.primary};
+  }
+`;
 
 const Comments = ({ comments }: CommentsProps) => {
   const getCommentsCount = () => {
-    if (comments) {
-      return comments.length
-    }
+    if (comments) return comments.length;
     return 0;
-  }
+  };
 
   return (
     <Wrapper>
-      <p><FontAwesomeIcon icon={faComment}/> {getCommentsCount()}</p>
+      <FontAwesomeIcon icon={faComment} /> {getCommentsCount()} comments
     </Wrapper>
   );
 };

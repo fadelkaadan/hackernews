@@ -7,14 +7,13 @@ interface ScoreProps {
   count: number;
 }
 
-const Wrapper = styled.div`
-  font-size: 12px;
-`
+const Wrapper = styled.p`
+`;
 
 const Score = ({ count }: ScoreProps) => {
   return (
     <Wrapper>
-      <p><FontAwesomeIcon icon={faArrowAltCircleUp}/> {count}</p>
+      <FontAwesomeIcon icon={faArrowAltCircleUp} /> {count}
     </Wrapper>
   );
 };

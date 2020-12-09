@@ -9,10 +9,9 @@ interface TimeProps {
   time: number;
 }
 
-const Wrapper = styled.div`
-  font-size: 12px;
-  color: ${(props) => props.theme.main.text.secondary};
-`
+const Wrapper = styled.p`
+  margin-right: 10px;
+`;
 
 const Time = ({ time }: TimeProps) => {
   const covnvertUnixTime = () => {
