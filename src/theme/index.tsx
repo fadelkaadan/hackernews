@@ -31,7 +31,7 @@ export const col_1 = {
     size: "1000px",
   },
   sideLine: {
-    size: "3%",
+    size: "2.5%",
   },
 };
 
@@ -40,6 +40,6 @@ export const col_2 = {
     size: "500px",
   },
   sideLine: {
-    size: "3%",
+    size: "5%",
   },
 };
