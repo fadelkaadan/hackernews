@@ -4,6 +4,7 @@ export const darkTheme = {
     text: {
       primary: "#e7e7e7",
       secondary: "#cccccc",
+      disabled: "#acacac"
     },
   },
   cards: {
@@ -18,6 +19,7 @@ export const lightTheme = {
     text: {
       primary: "#1d1d1d",
       secondary: "#2b2b2b",
+      disabled: "#4b4b4b"
     },
   },
   cards: {

@@ -12,12 +12,23 @@ const Wrapper = styled.p`
   color: ${(props) => props.theme.main.text.secondary};
   border: 1px solid ${(props) => props.theme.main.text.secondary};
   border-radius: 5px;
-  padding: 3px 4px;
+  padding: 3px 5px;
   cursor: pointer;
 
   &:hover {
     color: ${(props) => props.theme.main.text.primary};
     border: 1px solid ${(props) => props.theme.main.text.primary};
+  }
+`;
+
+const WrapperDisabled = styled(Wrapper)`
+  color: ${(props) => props.theme.main.text.disabled};
+  border: 1px solid ${(props) => props.theme.main.text.disabled};
+
+  &:hover {
+    color: ${(props) => props.theme.main.text.disabled};
+    border: 1px solid ${(props) => props.theme.main.text.disabled};
+    cursor: default;
   }
 `;
 
@@ -27,7 +38,11 @@ const Comments = ({ comments }: CommentsProps) => {
     return 0;
   };
 
-  return (
+  return getCommentsCount() === 0 ? (
+    <WrapperDisabled>
+      <FontAwesomeIcon icon={faComment} /> {getCommentsCount()} comments
+    </WrapperDisabled>
+  ) : (
     <Wrapper>
       <FontAwesomeIcon icon={faComment} /> {getCommentsCount()} comments
     </Wrapper>
