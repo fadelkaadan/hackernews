@@ -16,6 +16,10 @@ const Wrapper = styled.div`
 const Title = styled.a`
   color: ${(props) => props.theme.main.text.primary};
   text-decoration: none;
+
+  &:visited {
+    color: ${(props) => props.theme.main.text.disabled};
+  }
 `;
 
 const StyledLink = styled.div`
