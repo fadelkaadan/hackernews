@@ -52,6 +52,12 @@ const Sideline = styled.div`
   border-bottom-left-radius: 15px;
 `;
 
+const SidelineJob = styled(Sideline)`
+  background-size: 400% 400%;
+  animation: ${animation} 15s ease infinite;
+  background: linear-gradient(45deg, #efd5ff 0%, #515ada 100%);
+`;
+
 const Story = ({ storyId }: StoryProps) => {
   const [story, setStory] = useState<IStory>();
 
@@ -63,8 +69,8 @@ const Story = ({ storyId }: StoryProps) => {
     if (story && story.url) {
       return (
         <Wrapper>
-          <Sideline />
-          <Content story={story}/>
+          {story.type === "story" ? <Sideline /> : <SidelineJob />}
+          <Content story={story} />
         </Wrapper>
       );
     }
