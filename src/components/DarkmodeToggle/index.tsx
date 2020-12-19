@@ -17,7 +17,7 @@ const Toggle = styled.button`
 `;
 
 const DarkmodeToggle = () => {
-  const isDarkmode = useSelector((state: RootState) => state.Theme.isDarkmode);
+  const isDarkmode = useSelector((state: RootState) => state.theme.isDarkmode);
   const dispatch = useDispatch();
   const [icon, setIcon] = useState(faSun);
 

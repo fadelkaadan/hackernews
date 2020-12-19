@@ -6,9 +6,9 @@ import { RootState } from "../store/rootReducer";
 import { darkTheme, lightTheme, col_1, col_2 } from "../theme/customizations";
 
 const ThemeProvider = ({ children }: any) => {
-  const isDarkmode = useSelector((state: RootState) => state.Theme.isDarkmode);
+  const isDarkmode = useSelector((state: RootState) => state.theme.isDarkmode);
   const isOneColumnLayout = useSelector(
-    (state: RootState) => state.Theme.isOneColumnLayout
+    (state: RootState) => state.theme.isOneColumnLayout
   );
 
   const combineCustomizations = (): any => {
