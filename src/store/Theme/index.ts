@@ -6,8 +6,8 @@ import {
 } from "./types";
 
 const initialState: ThemeState = {
-  darkmode: true,
-  oneColumn: true,
+  isDarkmode: true,
+  isOneColumnLayout: true,
 };
 
 export default (state = initialState, action: ThemeActionTypes): ThemeState => {
@@ -15,12 +15,12 @@ export default (state = initialState, action: ThemeActionTypes): ThemeState => {
     case TOGGLE_DARKMODE:
       return {
         ...state,
-        darkmode: !state.darkmode,
+        isDarkmode: !state.isDarkmode,
       };
     case TOGGLE_ONE_COLUMN:
       return {
         ...state,
-        oneColumn: !state.oneColumn,
+        isOneColumnLayout: !state.isOneColumnLayout,
       };
     default:
       return state;
