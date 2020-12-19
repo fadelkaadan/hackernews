@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../store/rootReducer";
+import { toggleDarkMode } from "../../store/theme/actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun } from "@fortawesome/free-regular-svg-icons";
 import { faMoon } from "@fortawesome/free-regular-svg-icons";
-
-interface DarkmodeToggleProps {
-  theme: string;
-  handleClick: () => void;
-}
 
 const Toggle = styled.button`
   background-color: transparent;
@@ -18,12 +16,18 @@ const Toggle = styled.button`
   cursor: pointer;
 `;
 
-const DarkmodeToggle = ({ theme, handleClick }: DarkmodeToggleProps) => {
+const DarkmodeToggle = () => {
+  const isDarkmode = useSelector((state: RootState) => state.Theme.isDarkmode);
+  const dispatch = useDispatch();
   const [icon, setIcon] = useState(faSun);
 
+  const handleClick = () => {
+    dispatch(toggleDarkMode());
+  };
+
   useEffect(() => {
-    setIcon(theme === "dark" ? faSun : faMoon);
-  }, [theme]);
+    setIcon(isDarkmode ? faSun : faMoon);
+  }, [isDarkmode]);
 
   return (
     <Toggle onClick={handleClick}>

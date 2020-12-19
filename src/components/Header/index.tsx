@@ -3,13 +3,6 @@ import styled from "styled-components";
 import DarkmodeToggle from "../DarkmodeToggle";
 import LayoutToggle from "../LayoutToggle";
 
-interface HeaderProps {
-  theme: string;
-  themeToggler: () => void;
-  layout: string;
-  layoutToggler: () => void;
-}
-
 const Wrapper = styled.div`
   width: 100%;
   padding: 5px 0;
@@ -19,16 +12,11 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const Header = ({
-  theme,
-  themeToggler,
-  layout,
-  layoutToggler,
-}: HeaderProps) => {
+const Header = () => {
   return (
     <Wrapper>
-      <DarkmodeToggle theme={theme} handleClick={themeToggler} />
-      <LayoutToggle layout={layout} handleClick={layoutToggler} />
+      <DarkmodeToggle />
+      <LayoutToggle />
     </Wrapper>
   );
 };

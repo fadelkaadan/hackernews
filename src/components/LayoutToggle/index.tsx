@@ -1,13 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { device } from "../../theme/Breakpoints";
+import { useDispatch } from "react-redux";
+import { toggleOneColumnLayout } from "../../store/theme/actions";
+import { device } from "../../theme/breakpoints";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faColumns } from "@fortawesome/free-solid-svg-icons";
-
-interface LayoutToggleProps {
-  layout: string;
-  handleClick: () => void;
-}
 
 const Toggle = styled.button`
   background-color: transparent;
@@ -18,12 +15,18 @@ const Toggle = styled.button`
   display: none;
   cursor: pointer;
 
-  @media ${device.laptop} { 
+  @media ${device.laptop} {
     display: block;
   }
 `;
 
-const LayoutToggle = ({ layout, handleClick }: LayoutToggleProps) => {
+const LayoutToggle = () => {
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(toggleOneColumnLayout());
+  };
+
   return (
     <Toggle onClick={handleClick}>
       <FontAwesomeIcon icon={faColumns} />
