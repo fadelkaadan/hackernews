@@ -1,10 +1,9 @@
-export const TOGGLE_DARKMODE = "TOGGLE_DARKMODE";
-export const TOGGLE_ONE_COLUMN = "TOGGLE_ONE_COLUMN";
+import { TOGGLE_DARKMODE, TOGGLE_ONE_COLUMN, ThemeActionTypes } from "./types";
 
-export const toggleDarkMode = () => ({
+export const toggleDarkMode = (): ThemeActionTypes => ({
   type: TOGGLE_DARKMODE,
 });
 
-export const toggleOneColumn = () => ({
-  type: TOGGLE_DARKMODE,
+export const toggleOneColumn = (): ThemeActionTypes => ({
+  type: TOGGLE_ONE_COLUMN,
 });
