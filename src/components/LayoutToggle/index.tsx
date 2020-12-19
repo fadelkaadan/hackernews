@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { toggleOneColumnLayout } from "../../store/theme/actions";
-import { device } from "../../theme/Breakpoints";
+import { device } from "../../theme/breakpoints";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faColumns } from "@fortawesome/free-solid-svg-icons";
 

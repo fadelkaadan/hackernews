@@ -1,6 +1,6 @@
 import {
   TOGGLE_DARKMODE,
-  TOGGLE_ONE_COLUMN,
+  TOGGLE_ONE_COLUMN_LAYOUT,
   ThemeActionTypes,
   ThemeState,
 } from "./types";
@@ -17,7 +17,7 @@ export default (state = initialState, action: ThemeActionTypes): ThemeState => {
         ...state,
         isDarkmode: !state.isDarkmode,
       };
-    case TOGGLE_ONE_COLUMN:
+    case TOGGLE_ONE_COLUMN_LAYOUT:
       return {
         ...state,
         isOneColumnLayout: !state.isOneColumnLayout,
