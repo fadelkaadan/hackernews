@@ -1,7 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { fetchStoryIds, TOP_STORIES } from "../../api/hackernews";
+import { fetchStories } from "../../store/stories/actions";
+import { RootState } from "../../store/rootReducer";
 import Story from "../../components/Story";
+import LoadingIndicator from "../../components/LoadingIndicator";
+import { TOP_STORIES } from "../../core/Constants";
 
 const Wrapper = styled.div`
   display: flex;
@@ -22,18 +26,23 @@ const StoriesContainer = styled.div`
 `;
 
 const Home = () => {
-  const [storyIds, setStoryIds] = useState<number[]>([]);
+  const dispatch = useDispatch();
+  const stories = useSelector((state: RootState) => state.stories.list);
+  const isPending = useSelector((state: RootState) => state.stories.pending);
 
   useEffect(() => {
-    fetchStoryIds(TOP_STORIES, 30).then((data) => setStoryIds(data));
-  }, []);
+    dispatch(fetchStories(TOP_STORIES, 30));
+  }, [dispatch]);
 
   return (
     <Wrapper>
       <StoriesContainer>
-        {storyIds.map((id) => (
-          <Story key={id} storyId={id} />
-        ))}
+        {isPending ? (
+          <LoadingIndicator />
+        ) : (
+          stories &&
+          stories.map((story) => <Story key={story.id} data={story} />)
+        )}
       </StoriesContainer>
     </Wrapper>
   );
