@@ -1,11 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled, { keyframes } from "styled-components";
-import { fetchStory } from "../../api/hackernews";
 import Content from "../Content";
-
-interface StoryProps {
-  storyId: number;
-}
 
 interface IStory {
   by: string;
@@ -18,6 +13,10 @@ interface IStory {
   title: string;
   type: string;
   url: string;
+}
+
+interface StoryProps {
+  data: IStory;
 }
 
 const animation = keyframes`
@@ -58,19 +57,14 @@ const SidelineJob = styled(Sideline)`
   background: linear-gradient(45deg, #efd5ff 0%, #515ada 100%);
 `;
 
-const Story = ({ storyId }: StoryProps) => {
-  const [story, setStory] = useState<IStory>();
-
-  useEffect(() => {
-    fetchStory(storyId).then((data) => setStory(data));
-  }, [storyId]);
+const Story = ({ data }: StoryProps) => {
 
   const renderStory = () => {
-    if (story && story.url) {
+    if (data && data.url) {
       return (
         <Wrapper>
-          {story.type === "story" ? <Sideline /> : <SidelineJob />}
-          <Content story={story} />
+          {data.type === "story" ? <Sideline /> : <SidelineJob />}
+          <Content data={data} />
         </Wrapper>
       );
     }
