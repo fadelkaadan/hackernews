@@ -1,9 +1,9 @@
 import React from "react";
 import { ThemeProvider as Provider } from "styled-components";
-import GlobalStyle from "../theme/Globalstyle";
+import GlobalStyle from "./Globalstyle";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/rootReducer";
-import { darkTheme, lightTheme, col_1, col_2 } from "../theme/customizations";
+import { darkTheme, lightTheme, col_1, col_2 } from "./customizations";
 
 const ThemeProvider = ({ children }: any) => {
   const isDarkmode = useSelector((state: RootState) => state.theme.isDarkmode);

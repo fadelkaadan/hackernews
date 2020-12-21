@@ -1,6 +1,6 @@
 import React from "react";
 import { Provider } from "react-redux";
-import ThemeProvider from "../../providers/ThemeProvider";
+import ThemeProvider from "../../theme/ThemeProvider";
 import store from "../../store";
 import Home from "../../pages/Home";
 import "fontsource-roboto";
