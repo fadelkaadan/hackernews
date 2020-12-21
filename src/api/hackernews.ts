@@ -1,9 +1,5 @@
 import axios from "axios";
 
-export const TOP_STORIES = "topstories";
-export const BEST_STORIES = "beststories";
-export const NEW_STORIES = "newstories";
-
 const BASE_URL = "https://hacker-news.firebaseio.com/v0";
 
 export const fetchStoryIds = async (category: string, limit: number) => {
