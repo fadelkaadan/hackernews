@@ -46,15 +46,15 @@ const Sideline = styled.div`
   height: 100%;
   background: linear-gradient(-45deg, #fc466b 0%, #3f5efb 100%);
   background-size: 400% 400%;
-  animation: ${animation} 15s ease infinite;
+  animation: ${animation} 5s ease infinite;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 `;
 
 const SidelineJob = styled(Sideline)`
-  background-size: 400% 400%;
-  animation: ${animation} 15s ease infinite;
-  background: linear-gradient(45deg, #efd5ff 0%, #515ada 100%);
+background: linear-gradient(-45deg, #fc466b 0%, #3f5efb 100%);
+  background-size: 150% 150%;
+  animation: ${animation} 5s ease infinite;
 `;
 
 const Story = ({ data }: StoryProps) => {
