@@ -1,11 +1,13 @@
 import {
-  TOGGLE_DARKMODE,
+  SET_THEME,
   TOGGLE_ONE_COLUMN_LAYOUT,
   ThemeActionTypes,
+  ThemeEnum,
 } from "./types";
 
-export const toggleDarkMode = (): ThemeActionTypes => ({
-  type: TOGGLE_DARKMODE,
+export const toggleDarkMode = (theme: ThemeEnum): ThemeActionTypes => ({
+  type: SET_THEME,
+  data: theme,
 });
 
 export const toggleOneColumnLayout = (): ThemeActionTypes => ({
