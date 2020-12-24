@@ -9,7 +9,7 @@ import {
 
 const initialState: ThemeState = {
   isPreferencesClicked: false,
-  theme: ThemeEnum.DARK,
+  theme: ThemeEnum.NIGHT,
   isOneColumnLayout: true,
 };
 
