@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-import theme from "./theme";
+import preferences from "./preferences";
 import stories from "./stories";
 
 const rootReducer = combineReducers({
-  theme,
+  preferences,
   stories,
 });
 
