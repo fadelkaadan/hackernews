@@ -3,7 +3,7 @@ import { ThemeProvider as Provider } from "styled-components";
 import GlobalStyle from "./Globalstyle";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/rootReducer";
-import { ThemeEnum } from "../store/theme/types";
+import { ThemeEnum } from "../store/preferences/types";
 import {
   darkTheme,
   nightTheme,
@@ -13,9 +13,9 @@ import {
 } from "./customizations";
 
 const ThemeProvider = ({ children }: any) => {
-  const theme = useSelector((state: RootState) => state.theme.theme);
+  const theme = useSelector((state: RootState) => state.preferences.theme);
   const isOneColumnLayout = useSelector(
-    (state: RootState) => state.theme.isOneColumnLayout
+    (state: RootState) => state.preferences.isOneColumnLayout
   );
 
   const combineCustomizations = (): any => {

@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { togglePreferences } from "../../store/preferences/actions";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPalette } from "@fortawesome/free-solid-svg-icons";
@@ -18,10 +20,10 @@ const Wrapper = styled.button`
 `;
 
 const PreferencesButton = () => {
-  const [isClicked, setIsClicked] = useState(false);
+  const dispatch = useDispatch();
 
   const handleClick = () => {
-    setIsClicked(!isClicked);
+    dispatch(togglePreferences());
   };
 
   return (
