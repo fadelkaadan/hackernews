@@ -1,14 +1,29 @@
 export const darkTheme = {
   main: {
-    background: "#1d1d1d",
+    background: "#151515",
     text: {
-      primary: "#e7e7e7",
-      secondary: "#cccccc",
-      disabled: "#acacac"
+      primary: "#c1c1c1",
+      secondary: "#b7b7b7",
+      disabled: "#9c9c9c",
     },
   },
   cards: {
-    background: "#2b2b2b",
+    background: "#1f1f1f",
+    shadow: "transparent",
+  },
+};
+
+export const nightTheme = {
+  main: {
+    background: "#0d1117",
+    text: {
+      primary: "#e7e7e7",
+      secondary: "#cccccc",
+      disabled: "#acacac",
+    },
+  },
+  cards: {
+    background: "#161b22",
     shadow: "transparent",
   },
 };
@@ -19,7 +34,7 @@ export const lightTheme = {
     text: {
       primary: "#1d1d1d",
       secondary: "#2b2b2b",
-      disabled: "#4b4b4b"
+      disabled: "#4b4b4b",
     },
   },
   cards: {

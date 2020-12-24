@@ -3,29 +3,42 @@ import { ThemeProvider as Provider } from "styled-components";
 import GlobalStyle from "./Globalstyle";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/rootReducer";
-import { darkTheme, lightTheme, col_1, col_2 } from "./customizations";
+import { ThemeEnum } from "../store/preferences/types";
+import {
+  darkTheme,
+  nightTheme,
+  lightTheme,
+  col_1,
+  col_2,
+} from "./customizations";
 
 const ThemeProvider = ({ children }: any) => {
-  const isDarkmode = useSelector((state: RootState) => state.theme.isDarkmode);
+  const theme = useSelector((state: RootState) => state.preferences.theme);
   const isOneColumnLayout = useSelector(
-    (state: RootState) => state.theme.isOneColumnLayout
+    (state: RootState) => state.preferences.isOneColumnLayout
   );
 
   const combineCustomizations = (): any => {
-    let customizations = {};
-    if (isDarkmode) {
-      customizations = { ...customizations, ...darkTheme };
-    } else {
-      customizations = { ...customizations, ...lightTheme };
+    let preferences = {};
+    switch (theme) {
+      case ThemeEnum.DARK:
+        preferences = { ...preferences, ...darkTheme };
+        break;
+      case ThemeEnum.NIGHT:
+        preferences = { ...preferences, ...nightTheme };
+        break;
+      case ThemeEnum.LIGHT:
+        preferences = { ...preferences, ...lightTheme };
+        break;
     }
 
     if (isOneColumnLayout) {
-      customizations = { ...customizations, ...col_1 };
+      preferences = { ...preferences, ...col_1 };
     } else {
-      customizations = { ...customizations, ...col_2 };
+      preferences = { ...preferences, ...col_2 };
     }
 
-    return customizations;
+    return preferences;
   };
 
   return (

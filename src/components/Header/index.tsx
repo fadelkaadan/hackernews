@@ -1,22 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-import DarkmodeToggle from "../DarkmodeToggle";
-import LayoutToggle from "../LayoutToggle";
+import PreferencesButton from "../PreferencesButton";
 
 const Wrapper = styled.div`
   width: 100%;
-  padding: 5px 0;
+  padding: 5px 0px;
   background-color: ${(props) => props.theme.cards.background};
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 25px [content-start] minmax(100px, 1000px) [content-end] 25px 1fr;
+  justify-items: start;
 `;
 
 const Header = () => {
   return (
     <Wrapper>
-      <DarkmodeToggle />
-      <LayoutToggle />
+      <PreferencesButton />
     </Wrapper>
   );
 };
