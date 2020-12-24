@@ -7,6 +7,7 @@ import { faPalette } from "@fortawesome/free-solid-svg-icons";
 
 const Wrapper = styled.button`
   background-color: transparent;
+  padding: 0;
   border: none;
   outline: none;
   color: ${(props) => props.theme.main.text.secondary};
