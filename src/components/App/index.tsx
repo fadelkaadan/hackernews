@@ -5,12 +5,14 @@ import store from "../../store";
 import Home from "../../pages/Home";
 import "fontsource-roboto";
 import Header from "../Header";
+import Preferences from "../Preferences";
 
 const App = () => {
   return (
     <Provider store={store}>
       <ThemeProvider>
         <Header />
+        <Preferences />
         <Home />
       </ThemeProvider>
     </Provider>
