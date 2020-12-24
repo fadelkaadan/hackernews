@@ -22,12 +22,21 @@ const DarkmodeToggle = () => {
   const [icon, setIcon] = useState(faSun);
 
   const handleClick = () => {
+    window.localStorage.setItem("isDarkmode", `${!isDarkmode}`);
     dispatch(toggleDarkMode());
   };
 
   useEffect(() => {
     setIcon(isDarkmode ? faSun : faMoon);
   }, [isDarkmode]);
+
+  useEffect((): void => {
+    const isDarkmodeLocal = window.localStorage.getItem("isDarkmode");
+    if (isDarkmodeLocal !== `${isDarkmode}`) {
+      dispatch(toggleDarkMode());
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Toggle onClick={handleClick}>
