@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import ThemePreferences from "./ThemePreferences";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/rootReducer";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -13,11 +15,15 @@ const Wrapper = styled.div`
 `;
 
 const Preferences = () => {
-  return (
+  const show = useSelector(
+    (state: RootState) => state.preferences.isPreferencesClicked
+  );
+
+  return show ? (
     <Wrapper>
       <ThemePreferences />
     </Wrapper>
-  );
+  ) : null;
 };
 
 export default Preferences;

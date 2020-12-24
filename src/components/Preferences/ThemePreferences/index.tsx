@@ -1,7 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../store/rootReducer";
+import { useDispatch } from "react-redux";
 import { setTheme } from "../../../store/preferences/actions";
 import { ThemeEnum } from "../../../store/preferences/types";
 
@@ -74,20 +73,18 @@ const Light = styled(Circle)`
 
 const ThemePreferences = () => {
   const dispatch = useDispatch();
-  const show = useSelector(
-    (state: RootState) => state.preferences.isPreferencesClicked
-  );
+
   const changeTheme = (theme: ThemeEnum): void => {
     dispatch(setTheme(theme));
   };
-  return show ? (
+  return (
     <Wrapper>
       <Title>Theme</Title>
       <Dark onClick={() => changeTheme(ThemeEnum.DARK)} />
       <Night onClick={() => changeTheme(ThemeEnum.NIGHT)} />
       <Light onClick={() => changeTheme(ThemeEnum.LIGHT)} />
     </Wrapper>
-  ) : null;
+  );
 };
 
 export default ThemePreferences;
