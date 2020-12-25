@@ -60,8 +60,6 @@ const Circle = styled.div`
   }
 `;
 
-const Title = styled.h3``;
-
 const Dark = styled(Circle)`
   background-image: linear-gradient(285deg, #3d3d3d, #141414 68.91%, #000000);
 `;
