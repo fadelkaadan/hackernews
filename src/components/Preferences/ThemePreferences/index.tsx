@@ -1,20 +1,12 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import {
   setTheme,
   togglePreferences,
 } from "../../../store/preferences/actions";
 import { ThemeEnum } from "../../../store/preferences/types";
-
-const onRenderAnimation = keyframes`
-  0% {
-		opacity: 0;
-  }
-	100% {
-		opacity: 1;
-	}
-`;
+import { fadeIn, gradientColors } from "../../../theme/animations";
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.cards.background};
@@ -25,19 +17,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 150px;
-  animation: ${onRenderAnimation} 0.3s ease;
-`;
-
-const animation = keyframes`
-  0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  animation: ${fadeIn} 0.5s ease;
 `;
 
 const Circle = styled.div`
@@ -52,7 +32,7 @@ const Circle = styled.div`
 
   transition: 0.1s;
   background-size: 400% 400%;
-  animation: ${animation} 5s ease infinite;
+  animation: ${gradientColors} 5s ease infinite;
   opacity: 0.7;
 
   &:hover {
