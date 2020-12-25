@@ -1,6 +1,7 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import Content from "../Content";
+import { fadeIn, gradientColors } from "../../theme/animations";
 
 interface IStory {
   by: string;
@@ -19,18 +20,6 @@ interface StoryProps {
   data: IStory;
 }
 
-const animation = keyframes`
-  0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-`;
-
 const Wrapper = styled.div`
   border-radius: ${(props) => props.theme.main.borderRadius};
   color: #e7e7e7;
@@ -39,6 +28,7 @@ const Wrapper = styled.div`
   display: flex;
   background-color: ${(props) => props.theme.cards.background};
   box-shadow: 0px 1px 15px ${(props) => props.theme.cards.shadow};
+  animation: ${fadeIn} 0.5s ease;
 `;
 
 const Sideline = styled.div`
@@ -46,15 +36,9 @@ const Sideline = styled.div`
   height: 100%;
   background: linear-gradient(-45deg, #fc466b 0%, #3f5efb 100%);
   background-size: 400% 400%;
-  animation: ${animation} 5s ease infinite;
+  animation: ${gradientColors} 5s ease infinite;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
-`;
-
-const SidelineJob = styled(Sideline)`
-  background: linear-gradient(-45deg, #fc466b 0%, #3f5efb 100%);
-  background-size: 150% 150%;
-  animation: ${animation} 5s ease infinite;
 `;
 
 const Story = ({ data }: StoryProps) => {
@@ -62,7 +46,7 @@ const Story = ({ data }: StoryProps) => {
     if (data && data.url) {
       return (
         <Wrapper>
-          {data.type === "story" ? <Sideline /> : <SidelineJob />}
+          <Sideline />
           <Content data={data} />
         </Wrapper>
       );
