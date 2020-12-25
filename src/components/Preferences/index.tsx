@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/rootReducer";
 import styled from "styled-components";
-import PreferencesButton from "../PreferencesButton";
+import PreferencesButton from "./PreferencesButton";
 import ThemePreferences from "./ThemePreferences";
 
 const Wrapper = styled.div`

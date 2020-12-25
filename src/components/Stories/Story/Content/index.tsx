@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import TopInfo from "../TopInfo";
-import Link from "../Link";
+import Link from "./Link";
 import Comments from "../Comments";
 
 interface IStory {

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Score from "../Score";
-import Time from "../Time";
+import Score from "./Score";
+import Time from "./Time";
 
 interface TopInfoProps {
   time: number;
