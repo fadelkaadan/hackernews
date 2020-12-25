@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Content from "../Content";
-import { fadeIn, gradientColors } from "../../theme/animations";
+import Content from "./Content";
+import { fadeIn, gradientColors } from "../../../theme/animations";
 
 interface IStory {
   by: string;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Story from "../../components/Story";
+import Story from "./Story";
 import LoadingIndicator from "../../components/LoadingIndicator";
 
 interface IStory {
