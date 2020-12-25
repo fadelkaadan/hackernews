@@ -32,7 +32,7 @@ const animation = keyframes`
 `;
 
 const Wrapper = styled.div`
-  border-radius: 15px;
+  border-radius: ${(props) => props.theme.main.borderRadius};
   color: #e7e7e7;
   width: ${(props) => props.theme.story.size};
   margin: 0px 25px 25px 25px;
@@ -52,13 +52,12 @@ const Sideline = styled.div`
 `;
 
 const SidelineJob = styled(Sideline)`
-background: linear-gradient(-45deg, #fc466b 0%, #3f5efb 100%);
+  background: linear-gradient(-45deg, #fc466b 0%, #3f5efb 100%);
   background-size: 150% 150%;
   animation: ${animation} 5s ease infinite;
 `;
 
 const Story = ({ data }: StoryProps) => {
-
   const renderStory = () => {
     if (data && data.url) {
       return (

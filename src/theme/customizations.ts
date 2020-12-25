@@ -6,6 +6,7 @@ export const darkTheme = {
       secondary: "#b7b7b7",
       disabled: "#9c9c9c",
     },
+    borderRadius: "15px",
   },
   cards: {
     background: "#131313",
@@ -21,6 +22,7 @@ export const nightTheme = {
       secondary: "#cccccc",
       disabled: "#acacac",
     },
+    borderRadius: "15px",
   },
   cards: {
     background: "#161b22",
@@ -36,6 +38,7 @@ export const lightTheme = {
       secondary: "#2b2b2b",
       disabled: "#4b4b4b",
     },
+    borderRadius: "15px",
   },
   cards: {
     background: "#dfdfdf",
