@@ -6,12 +6,15 @@ export const darkTheme = {
       secondary: "#b7b7b7",
       disabled: "#9c9c9c",
     },
-    borderRadius: "15px",
+    borderRadius: "15px"
   },
   cards: {
     background: "#131313",
     shadow: "transparent",
   },
+  button: {
+    shadow: "transparent",
+  }
 };
 
 export const nightTheme = {
@@ -22,12 +25,15 @@ export const nightTheme = {
       secondary: "#cccccc",
       disabled: "#acacac",
     },
-    borderRadius: "15px",
+    borderRadius: "15px"
   },
   cards: {
     background: "#161b22",
     shadow: "transparent",
   },
+  button: {
+    shadow: "transparent",
+  }
 };
 
 export const lightTheme = {
@@ -38,12 +44,15 @@ export const lightTheme = {
       secondary: "#2b2b2b",
       disabled: "#4b4b4b",
     },
-    borderRadius: "15px",
+    borderRadius: "15px"
   },
   cards: {
     background: "#dfdfdf",
     shadow: "#b3b3b3",
   },
+  button: {
+    shadow: "#464646",
+  }
 };
 
 export const col_1 = {
