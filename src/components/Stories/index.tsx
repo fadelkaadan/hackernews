@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Story from "./Story";
 import LoadingIndicator from "../../components/LoadingIndicator";
+import LoadMoreButton from "./LoadMoreButton";
 
 interface IStory {
   by: string;
@@ -24,9 +25,10 @@ interface StoriesProps {
 
 const Wrapper = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: baseline;
+  ${(props) => props.theme.story.size};
+  padding: 0 25px;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   max-width: 1200px;
   margin-top: 25px;
@@ -37,7 +39,10 @@ const Stories = ({ stories, isPending }: StoriesProps) => {
     stories && stories.map((story) => <Story key={story.id} data={story} />);
 
   return (
-    <Wrapper>{isPending ? <LoadingIndicator /> : renderStories()}</Wrapper>
+    <Wrapper>
+      {isPending ? <LoadingIndicator /> : renderStories()}
+      {!isPending ? <LoadMoreButton /> : null}
+    </Wrapper>
   );
 };
 
