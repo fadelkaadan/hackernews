@@ -6,7 +6,6 @@ import store from "../../store";
 import Home from "../../pages/Home";
 import "fontsource-roboto";
 import Header from "../Header";
-import Preferences from "../Preferences";
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.main.background};
@@ -18,7 +17,6 @@ const App = () => {
       <ThemeProvider>
         <Wrapper>
           <Header />
-          <Preferences />
           <Home />
         </Wrapper>
       </ThemeProvider>

@@ -1,13 +1,31 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { useDispatch } from "react-redux";
-import { setTheme } from "../../../store/preferences/actions";
+import {
+  setTheme,
+  togglePreferences,
+} from "../../../store/preferences/actions";
 import { ThemeEnum } from "../../../store/preferences/types";
 
+const onRenderAnimation = keyframes`
+  0% {
+		opacity: 0;
+  }
+	100% {
+		opacity: 1;
+	}
+`;
+
 const Wrapper = styled.div`
+  background-color: ${(props) => props.theme.cards.background};
   grid-column: content;
+  position: relative;
   display: flex;
+  border-radius: ${(props) => props.theme.main.borderRadius};
+  justify-content: space-between;
   align-items: center;
+  width: 150px;
+  animation: ${onRenderAnimation} 0.3s ease;
 `;
 
 const animation = keyframes`
@@ -26,9 +44,9 @@ const Circle = styled.div`
   height: 30px;
   width: 30px;
   border-radius: 50%;
+  left: 50%;
   border: none;
   outline: none;
-  margin-left: 20px;
   cursor: pointer;
   box-sizing: border-box;
 
@@ -45,17 +63,12 @@ const Circle = styled.div`
 const Title = styled.h3``;
 
 const Dark = styled(Circle)`
-  background-image: linear-gradient(
-    to right bottom,
-    #282c2e 0%,
-    #404449 50%,
-    #2d3031 100%
-  );
+  background-image: linear-gradient(285deg, #3d3d3d, #141414 68.91%, #000000);
 `;
 
 const Night = styled(Circle)`
   background-image: linear-gradient(
-    to right bottom,
+    -85deg,
     #355397 0%,
     #233964 51%,
     #4b6cb7 100%
@@ -64,10 +77,10 @@ const Night = styled(Circle)`
 
 const Light = styled(Circle)`
   background-image: linear-gradient(
-    to right,
-    #f3f3f3 0%,
-    #c0c0c0 50%,
-    #e9e9e9 100%
+    -45deg,
+    #bababa 61.34%,
+    #818181 79.83%,
+    #d9d9d9
   );
 `;
 
@@ -76,10 +89,10 @@ const ThemePreferences = () => {
 
   const changeTheme = (theme: ThemeEnum): void => {
     dispatch(setTheme(theme));
+    dispatch(togglePreferences());
   };
   return (
     <Wrapper>
-      <Title>Theme</Title>
       <Dark onClick={() => changeTheme(ThemeEnum.DARK)} />
       <Night onClick={() => changeTheme(ThemeEnum.NIGHT)} />
       <Light onClick={() => changeTheme(ThemeEnum.LIGHT)} />

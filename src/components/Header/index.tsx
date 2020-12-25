@@ -1,20 +1,22 @@
 import React from "react";
 import styled from "styled-components";
-import PreferencesButton from "../PreferencesButton";
+import Preferences from "../Preferences";
 
 const Wrapper = styled.div`
   width: 100%;
-  padding: 15px 0px;
+  min-height: 40px;
+  padding: 10px 0px;
   background-color: ${(props) => props.theme.cards.background};
   display: grid;
   grid-template-columns: 1fr 25px [content-start] minmax(100px, 1000px) [content-end] 25px 1fr;
-  justify-items: start;
+  justify-items: center;
+  align-items: center;
 `;
 
 const Header = () => {
   return (
     <Wrapper>
-      <PreferencesButton />
+      <Preferences />
     </Wrapper>
   );
 };
