@@ -1,7 +1,14 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { fetchStories } from "../../../store/stories/actions";
+import { RootState } from "../../../store/rootReducer";
 import { gradientColors } from "../../../theme/animations";
 import Button from "../../../common/Button";
+import LoadingIndicator from "../../LoadingIndicator";
+import { STORIES_LIMIT } from "../../../core/constants";
+
+const TOP_STORIES = "topstories";
 
 const Wrapper = styled(Button)`
   width: 150px;
@@ -18,7 +25,19 @@ const Wrapper = styled(Button)`
 `;
 
 const LoadMoreButton = () => {
-  return <Wrapper>Load more</Wrapper>;
+  const dispatch = useDispatch();
+  const startAt = useSelector((state: RootState) => state.stories.startAt);
+  const isPending = useSelector((state: RootState) => state.stories.pending);
+
+  const loadMore = () => {
+    dispatch(fetchStories(TOP_STORIES, startAt, STORIES_LIMIT));
+  };
+
+  return isPending ? (
+    <LoadingIndicator />
+  ) : (
+    <Wrapper onClick={loadMore}>Load more</Wrapper>
+  );
 };
 
 export default LoadMoreButton;
