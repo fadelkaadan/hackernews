@@ -12,7 +12,8 @@ export interface IStory {
 }
 
 export interface StoriesState {
-  list: IStory[] | undefined;
+  list: IStory[];
+  startAt: number;
   pending: Boolean;
   error: Object | null;
 }
@@ -20,11 +21,28 @@ export interface StoriesState {
 export const FETCH_STORIES_SUCCESS = "FETCH_STORIES_SUCCESS";
 export const FETCH_STORIES_PENDING = "FETCH_STORIES_PENDING";
 export const FETCH_STORIES_ERROR = "FETCH_STORIES_ERROR";
+export const INCREMENT_START_AT = "INCREMENT_START_AT";
 
-interface fetchStoriesAction {
+interface IFetchStoriesPendingAction {
   type: string;
-  data?: IStory[];
-  error?: any;
 }
 
-export type StoriesActionTypes = fetchStoriesAction;
+interface IFetchStoriesSuccessAction {
+  type: string;
+  data: IStory[];
+}
+
+interface IFetchStoriesErrorAction {
+  type: string;
+  error: any;
+}
+
+interface IIncrementStartAtAction {
+  type: string;
+}
+
+export type StoriesActionTypes =
+  | IFetchStoriesPendingAction
+  | IFetchStoriesSuccessAction
+  | IFetchStoriesErrorAction
+  | IIncrementStartAtAction;
