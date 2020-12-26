@@ -2,11 +2,11 @@ import axios from "axios";
 
 const BASE_URL = "https://hacker-news.firebaseio.com/v0";
 
-export const fetchStoryIds = async (category: string, limit: number) => {
+export const fetchStoryIds = async (category: string) => {
   const result = await axios
     .get(`${BASE_URL}/${category}.json`)
     .then(({ data }) => data);
-  return result.slice(0, limit);
+  return result;
 };
 
 export const fetchStory = async (id: number) => {
