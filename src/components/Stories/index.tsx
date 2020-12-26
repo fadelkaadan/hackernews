@@ -18,7 +18,7 @@ interface IStory {
 }
 
 interface StoriesProps {
-  stories?: IStory[];
+  stories: IStory[];
   isPending: Boolean;
   errorMessage: any;
 }
@@ -34,14 +34,14 @@ const Wrapper = styled.div`
   margin-top: 25px;
 `;
 
-const Stories = ({ stories, isPending }: StoriesProps) => {
+const Stories = ({ stories = [], isPending }: StoriesProps) => {
   const renderStories = () =>
     stories && stories.map((story) => <Story key={story.id} data={story} />);
 
   return (
     <Wrapper>
-      {isPending ? <LoadingIndicator /> : renderStories()}
-      {!isPending ? <LoadMoreButton /> : null}
+      {isPending && stories.length < 1 ? <LoadingIndicator /> : renderStories()}
+      { stories.length > 0 ? <LoadMoreButton /> : null}
     </Wrapper>
   );
 };
