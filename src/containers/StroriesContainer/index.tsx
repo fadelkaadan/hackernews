@@ -3,10 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchStories } from "../../store/stories/actions";
 import { RootState } from "../../store/rootReducer";
 import Stories from "../../components/Stories";
+import { STORIES_LIMIT } from "../../core/constants";
 
-export const TOP_STORIES = "topstories";
-export const BEST_STORIES = "beststories";
-export const NEW_STORIES = "newstories";
+const TOP_STORIES = "topstories";
 
 const StoriesContainer = () => {
   const dispatch = useDispatch();
@@ -15,7 +14,7 @@ const StoriesContainer = () => {
   const errorMessage = useSelector((state: RootState) => state.stories.error);
 
   useEffect(() => {
-    dispatch(fetchStories(TOP_STORIES, 30));
+    dispatch(fetchStories(TOP_STORIES, 0, STORIES_LIMIT));
   }, [dispatch]);
 
   return (
