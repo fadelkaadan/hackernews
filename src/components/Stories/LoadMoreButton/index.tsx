@@ -4,11 +4,9 @@ import styled from "styled-components";
 import { fetchStories } from "../../../store/stories/actions";
 import { RootState } from "../../../store/rootReducer";
 import { gradientColors } from "../../../theme/animations";
-import Button from "../../../common/Button";
+import Button from "../../Button";
 import LoadingIndicator from "../../LoadingIndicator";
-import { STORIES_LIMIT } from "../../../core/constants";
-
-const TOP_STORIES = "topstories";
+import { STORIES_LIMIT, TOP_STORIES } from "../../../core/constants";
 
 const Wrapper = styled(Button)`
   width: 150px;

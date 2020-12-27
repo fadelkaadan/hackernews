@@ -3,9 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchStories } from "../../store/stories/actions";
 import { RootState } from "../../store/rootReducer";
 import Stories from "../../components/Stories";
-import { STORIES_LIMIT } from "../../core/constants";
-
-const TOP_STORIES = "topstories";
+import { STORIES_LIMIT, TOP_STORIES } from "../../core/constants";
 
 const StoriesContainer = () => {
   const dispatch = useDispatch();
