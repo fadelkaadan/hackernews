@@ -11,6 +11,7 @@ interface LinkProps {
 
 const Wrapper = styled.div`
   cursor: pointer;
+  margin-top: 0.6rem;
 `;
 
 const Button = styled.button`
