@@ -22,7 +22,7 @@ interface ContentProps {
 }
 
 const Wrapper = styled.div`
-  padding: 5px 15px 5px 15px;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -32,6 +32,8 @@ const Wrapper = styled.div`
 const Title = styled.a`
   color: ${(props) => props.theme.main.text.primary};
   text-decoration: none;
+  font-size: 1.6rem;
+  margin-bottom: 0.6rem;
 
   &:visited {
     color: ${(props) => props.theme.main.text.disabled};

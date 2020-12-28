@@ -9,9 +9,9 @@ import LoadingIndicator from "../../LoadingIndicator";
 import { STORIES_LIMIT, TOP_STORIES } from "../../../core/constants";
 
 const Wrapper = styled(Button)`
-  width: 150px;
-  height: 35px;
-  margin-bottom: 25px;
+  width: 15rem;
+  height: 3.5rem;
+  margin-bottom: 2.5rem;
   border: none;
   outline: none;
   cursor: pointer;

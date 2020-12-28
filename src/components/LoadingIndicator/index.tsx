@@ -5,7 +5,7 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { spin, fadeIn } from "../../theme/animations";
 
 const Spinner = styled.p`
-  font-size: 50px;
+  font-size: 5rem;
   color: ${(props) => props.theme.main.text.secondary};
   animation: ${spin} 2s linear infinite, ${fadeIn} 0.5s;
   margin: 0;

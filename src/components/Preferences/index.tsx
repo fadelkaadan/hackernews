@@ -7,7 +7,7 @@ import ThemePreferences from "./ThemePreferences";
 
 const Wrapper = styled.div`
   color: ${(props) => props.theme.main.text.primary};
-  width: 150px;
+  width: 15rem;
   grid-column: content;
   display: flex;
   justify-content: center;
