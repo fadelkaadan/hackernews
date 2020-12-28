@@ -3,14 +3,14 @@ import { device } from "./breakpoints";
 
 const GlobalStyle = createGlobalStyle`
   html {
-    font-size: 50%;
+    font-size: 55%;
 
     @media ${device.mobileM} {
       font-size: 62.5%;
     }
     
-    @media ${device.desktop} {
-      font-size: 100%;
+    @media ${device.laptopL} {
+      font-size: 90%;
     }
   }
   body {
