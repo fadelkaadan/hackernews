@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Button = styled.button`
-  box-shadow: 0px 0px 10px ${(props) => props.theme.button.shadow};
+  box-shadow: 0 0 1rem ${(props) => props.theme.button.shadow};
   opacity: 0.8;
   transition: 0.2s;
 
@@ -10,7 +10,7 @@ const Button = styled.button`
   }
 
   &:active {
-    box-shadow: 0px 0px 5px ${(props) => props.theme.button.shadow};
+    box-shadow: 0 0 0.5rem ${(props) => props.theme.button.shadow};
   }
 `;
 

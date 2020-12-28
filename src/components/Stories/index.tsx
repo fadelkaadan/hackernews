@@ -26,12 +26,11 @@ interface StoriesProps {
 const Wrapper = styled.div`
   display: flex;
   ${(props) => props.theme.story.size};
-  padding: 0 25px;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
-  margin-top: 25px;
+  margin-top: 2.5rem;
+  grid-column: content;
 `;
 
 const Stories = ({ stories = [], isPending }: StoriesProps) => {

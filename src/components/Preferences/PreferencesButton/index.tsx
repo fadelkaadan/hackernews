@@ -12,7 +12,7 @@ const Wrapper = styled.button`
   border: none;
   outline: none;
   color: ${(props) => props.theme.main.text.secondary};
-  font-size: 28px;
+  font-size: 2.8rem;
   cursor: pointer;
   animation: ${fadeIn} 0.5s ease;
 

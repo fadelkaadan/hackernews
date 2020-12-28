@@ -6,7 +6,7 @@ interface AuthorProps {
 }
 
 const Wrapper = styled.div`
-  font-size: 12px;
+  font-size: 1.2rem;
 `
 
 const Author = ({ name }: AuthorProps) => {

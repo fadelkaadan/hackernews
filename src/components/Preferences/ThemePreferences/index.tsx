@@ -16,13 +16,13 @@ const Wrapper = styled.div`
   border-radius: ${(props) => props.theme.main.borderRadius};
   justify-content: space-between;
   align-items: center;
-  width: 150px;
+  width: 15rem;
   animation: ${fadeIn} 0.5s ease;
 `;
 
 const Circle = styled.div`
-  height: 30px;
-  width: 30px;
+  height: 3rem;
+  width: 3rem;
   border-radius: 50%;
   left: 50%;
   border: none;

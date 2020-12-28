@@ -9,7 +9,7 @@ interface TopInfoProps {
 }
 
 const Wrapper = styled.div`
-  font-size: 12px;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   color: ${(props) => props.theme.main.text.secondary};

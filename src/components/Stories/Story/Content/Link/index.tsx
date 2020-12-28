@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 `;
 
 const Button = styled.button`
-  font-size: 10px;
+  font-size: 1rem;
   padding: 0;
   cursor: pointer;
   background-color: transparent;
@@ -30,8 +30,8 @@ const Button = styled.button`
     content: "";
     display: block;
     width: 0%;
-    padding-top: 3px;
-    border-bottom: 2px solid #785bf7;
+    padding-top: 0.3rem;
+    border-bottom: 0.2rem solid #785bf7;
     transition: 0.2s;
   }
 
@@ -43,7 +43,7 @@ const Button = styled.button`
 const ButtonSuccess = styled(Button)`
   color: #83ad6c;
   &::after {
-    border-bottom: 2px solid #83ad6c;
+    border-bottom: 0.2rem solid #83ad6c;
   }
 
   &:hover::after {

@@ -8,26 +8,26 @@ interface CommentsProps {
 }
 
 const Wrapper = styled.p`
-  font-size: 12px;
+  font-size: 1.2rem;
   color: ${(props) => props.theme.main.text.secondary};
-  border: 1px solid ${(props) => props.theme.main.text.secondary};
-  border-radius: 5px;
-  padding: 3px 5px;
+  border: 0.1rem solid ${(props) => props.theme.main.text.secondary};
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.5rem;
   cursor: pointer;
 
   &:hover {
     color: ${(props) => props.theme.main.text.primary};
-    border: 1px solid ${(props) => props.theme.main.text.primary};
+    border: 0.1rem solid ${(props) => props.theme.main.text.primary};
   }
 `;
 
 const WrapperDisabled = styled(Wrapper)`
   color: ${(props) => props.theme.main.text.disabled};
-  border: 1px solid ${(props) => props.theme.main.text.disabled};
+  border: 0.1rem solid ${(props) => props.theme.main.text.disabled};
 
   &:hover {
     color: ${(props) => props.theme.main.text.disabled};
-    border: 1px solid ${(props) => props.theme.main.text.disabled};
+    border: 0.1rem solid ${(props) => props.theme.main.text.disabled};
     cursor: default;
   }
 `;

@@ -10,7 +10,7 @@ interface TimeProps {
 }
 
 const Wrapper = styled.p`
-  margin-right: 10px;
+  margin-right: 1rem;
 `;
 
 const Time = ({ time }: TimeProps) => {

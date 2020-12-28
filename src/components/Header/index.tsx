@@ -4,11 +4,11 @@ import Preferences from "../Preferences";
 
 const Wrapper = styled.div`
   width: 100%;
-  min-height: 40px;
-  padding: 10px 0px;
+  min-height: 4rem;
+  padding: 1rem 0;
   background-color: ${(props) => props.theme.cards.background};
   display: grid;
-  grid-template-columns: 1fr 25px [content-start] minmax(100px, 1000px) [content-end] 25px 1fr;
+  grid-template-columns: 1fr 2.5rem [content-start] minmax(200px, 100rem) [content-end] 2.5rem 1fr;
   justify-items: center;
   align-items: center;
 `;
