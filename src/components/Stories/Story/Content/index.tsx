@@ -33,7 +33,6 @@ const Title = styled.a`
   color: ${(props) => props.theme.main.text.primary};
   text-decoration: none;
   font-size: 1.6rem;
-  margin-bottom: 0.6rem;
 
   &:visited {
     color: ${(props) => props.theme.main.text.disabled};

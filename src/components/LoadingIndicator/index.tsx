@@ -8,7 +8,7 @@ const Spinner = styled.p`
   font-size: 5rem;
   color: ${(props) => props.theme.main.text.secondary};
   animation: ${spin} 2s linear infinite, ${fadeIn} 0.5s;
-  margin: 0;
+  margin: 0 0 2.5rem 0;
 `;
 
 const LoadingIndicator = () => {
