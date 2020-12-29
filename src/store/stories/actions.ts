@@ -6,7 +6,7 @@ import {
   StoriesActionTypes,
   IStory,
 } from "./types";
-import { fetchStoryIds, fetchStory } from "../../api/hackernews";
+import { fetchStoryIds, fetchItem } from "../../api/hackernews";
 
 export const fetchStories = (
   category: string,
@@ -18,7 +18,7 @@ export const fetchStories = (
     const storyIds = await fetchStoryIds(category);
     const stories = await storyIds
       .slice(startAt, startAt + limit)
-      .map(async (id: number) => await fetchStory(id));
+      .map(async (id: number) => await fetchItem(id));
     dispatch(fetchStoriesSuccess(await Promise.all(stories)));
     dispatch(incrementStartAt());
   } catch (error) {

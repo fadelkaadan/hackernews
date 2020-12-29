@@ -9,7 +9,7 @@ export const fetchStoryIds = async (category: string) => {
   return result;
 };
 
-export const fetchStory = async (id: number) => {
+export const fetchItem = async (id: number) => {
   const result = await axios
     .get(`${BASE_URL}/item/${id}.json`)
     .then(({ data }) => data);
