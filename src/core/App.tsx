@@ -24,7 +24,7 @@ const App = () => {
               <Route exact path={"/"}>
                 <Home />
               </Route>
-              <Route path={"/:postId/comments"}>
+              <Route path={"/articles/:storyId/comments"}>
                 <CommentSection />
               </Route>
             </Switch>
