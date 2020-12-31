@@ -8,9 +8,13 @@ const GlobalStyle = createGlobalStyle`
     @media ${device.mobileM} {
       font-size: 62.5%;
     }
+
+    @media ${device.desktop} {
+      font-size: 70%;
+    }
     
-    @media ${device.laptopL} {
-      font-size: 90%;
+    @media ${device.desktopL} {
+      font-size: 85%;
     }
   }
   body {
