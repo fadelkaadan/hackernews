@@ -19,16 +19,16 @@ const Wrapper = styled.div`
   align-items: flex-start;
 `;
 
-const Text = styled.p`
+const Text = styled.div`
   color: ${(props) => props.theme.main.text.primary};
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   margin: 0;
   line-height: 1.4;
   overflow-wrap: anywhere;
 
-  &:visited {
-    color: ${(props) => props.theme.main.text.disabled};
+  & a {
+    color: ${(props) => props.theme.main.text.primary};
   }
 `;
 
@@ -48,7 +48,7 @@ const Content = ({ data }: ContentProps) => {
   return (
     <Wrapper>
       <TopInfo author={data.by} time={data.time} />
-      <Text>{stringToHTML(data.text)}</Text>
+      <Text dangerouslySetInnerHTML={{ __html: stringToHTML(data.text) }} />
       <CommentsButton
         comments={data.kids}
         onClick={handleClick}
