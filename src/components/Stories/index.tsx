@@ -3,19 +3,7 @@ import styled from "styled-components";
 import Story from "./Story";
 import LoadingIndicator from "../../components/LoadingIndicator";
 import LoadMoreButton from "./LoadMoreButton";
-
-interface IStory {
-  by: string;
-  descendants: number;
-  id: number;
-  kids: number[];
-  score: number;
-  text: string;
-  time: number;
-  title: string;
-  type: string;
-  url: string;
-}
+import { IStory } from "../../core/types";
 
 interface StoriesProps {
   stories: IStory[];
@@ -25,7 +13,6 @@ interface StoriesProps {
 
 const Wrapper = styled.div`
   display: flex;
-  ${(props) => props.theme.story.size};
   flex-direction: column;
   align-items: center;
   width: 100%;
@@ -40,7 +27,7 @@ const Stories = ({ stories = [], isPending }: StoriesProps) => {
   return (
     <Wrapper>
       {isPending && stories.length < 1 ? <LoadingIndicator /> : renderStories()}
-      { stories.length > 0 ? <LoadMoreButton /> : null}
+      {stories.length > 0 ? <LoadMoreButton /> : null}
     </Wrapper>
   );
 };
