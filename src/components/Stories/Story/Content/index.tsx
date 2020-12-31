@@ -18,6 +18,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
+  word-break: break-word;
 `;
 
 const Title = styled.a`
