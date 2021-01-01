@@ -23,15 +23,15 @@ const Wrapper = styled.div`
   display: flex;
   background-color: ${(props) => props.theme.cards.background};
   animation: ${fadeIn} 0.5s ease;
-  border-left: 1px solid ${(props) => props.theme.main.text.secondary};;
+  border-left: 1px solid ${(props) => props.theme.main.text.secondary};
 `;
 
 const Comment = ({ data }: CommentProps) => {
-  return (
+  return data.text ? (
     <Wrapper>
       <Content data={data} />
     </Wrapper>
-  );
+  ) : null;
 };
 
 export default Comment;

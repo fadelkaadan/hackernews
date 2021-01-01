@@ -30,6 +30,10 @@ const Text = styled.div`
   & a {
     color: ${(props) => props.theme.main.text.primary};
   }
+
+  & code {
+    white-space: pre-line;
+  }
 `;
 
 const Content = ({ data }: ContentProps) => {
