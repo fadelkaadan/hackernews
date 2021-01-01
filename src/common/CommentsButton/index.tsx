@@ -1,10 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconDefinition } from "@fortawesome/free-regular-svg-icons";
+import {
+  IconDefinition,
+  faMinusSquare,
+} from "@fortawesome/free-regular-svg-icons";
 
 interface CommentsProps {
   comments: number[];
+  isOpen?: Boolean;
   onClick: () => void;
   label: string;
   icon: IconDefinition;
@@ -41,7 +45,13 @@ const WrapperDisabled = styled(Wrapper)`
   }
 `;
 
-const CommentsButton = ({ comments, onClick, label, icon }: CommentsProps) => {
+const CommentsButton = ({
+  comments,
+  isOpen,
+  onClick,
+  label,
+  icon,
+}: CommentsProps) => {
   const getCommentsCount = () => {
     if (comments) return comments.length;
     return 0;
@@ -53,7 +63,8 @@ const CommentsButton = ({ comments, onClick, label, icon }: CommentsProps) => {
     </WrapperDisabled>
   ) : (
     <Wrapper onClick={() => onClick()}>
-      <FontAwesomeIcon icon={icon} /> {getCommentsCount()} {label}
+      <FontAwesomeIcon icon={isOpen ? faMinusSquare : icon} />{" "}
+      {isOpen ? "hide" : `${getCommentsCount()} ${label}`}
     </Wrapper>
   );
 };

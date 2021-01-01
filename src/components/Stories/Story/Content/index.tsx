@@ -51,6 +51,7 @@ const Content = ({ data }: ContentProps) => {
       </StyledLink>
       <CommentsButton
         comments={data.kids}
+        isOpen={isCommentsOpen}
         onClick={handleClick}
         label={data.kids && data.kids.length === 1 ? "comment" : "comments"}
         icon={faCommentDots}
