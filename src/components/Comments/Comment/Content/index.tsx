@@ -55,6 +55,7 @@ const Content = ({ data }: ContentProps) => {
       <Text dangerouslySetInnerHTML={{ __html: stringToHTML(data.text) }} />
       <CommentsButton
         comments={data.kids}
+        isOpen={isCommentsOpen}
         onClick={handleClick}
         label={data.kids && data.kids.length === 1 ? "reply" : "replies"}
         icon={faReply}
