@@ -44,7 +44,7 @@ const Content = ({ data }: ContentProps) => {
 
   return (
     <Wrapper>
-      <TopInfo time={data.time} score={data.score} />
+      <TopInfo author={data.by} time={data.time} score={data.score} />
       <StyledLink>
         <Title href={data.url}>{data.title}</Title>
         <Link src={data.url} />
