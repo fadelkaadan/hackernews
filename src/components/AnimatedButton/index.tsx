@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Button = styled.button`
+const AnimatedButton = styled.button`
   box-shadow: 0 0 1rem ${(props) => props.theme.button.shadow};
   opacity: 0.8;
   transition: 0.2s;
@@ -14,4 +14,4 @@ const Button = styled.button`
   }
 `;
 
-export default Button;
+export default AnimatedButton;

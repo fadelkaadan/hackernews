@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import TopInfo from "../TopInfo";
+import TopInfo from "../../../TopInfo";
 import Link from "./Link";
-import CommentsButton from "../../../../common/CommentsButton";
+import CommentsButton from "../../../CommentsButton";
 import CommentsContainer from "../../../../containers/CommentsContainer";
 import { IStory } from "../../../../core/types";
 import { faCommentDots } from "@fortawesome/free-regular-svg-icons";
