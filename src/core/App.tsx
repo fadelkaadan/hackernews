@@ -6,10 +6,14 @@ import ThemeProvider from "../theme/ThemeProvider";
 import store from "../store";
 import "fontsource-roboto";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import Home from "../pages/Home";
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.main.background};
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: min-content 1fr min-content;
 `;
 
 const App = () => {
@@ -24,6 +28,7 @@ const App = () => {
                 <Home />
               </Route>
             </Switch>
+            <Footer />
           </Wrapper>
         </ThemeProvider>
       </BrowserRouter>
