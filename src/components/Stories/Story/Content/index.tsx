@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import TopInfo from "../../../TopInfo";
 import Link from "./Link";
-import CommentsButton from "../../../CommentsButton";
+import CommentsButton from "../../../Comments/CommentsButton";
 import CommentsContainer from "../../../../containers/CommentsContainer";
 import { IStory } from "../../../../core/types";
-import { faCommentDots } from "@fortawesome/free-regular-svg-icons";
+import { faComment } from "@fortawesome/free-regular-svg-icons";
 
 interface ContentProps {
   data: IStory;
@@ -54,7 +54,7 @@ const Content = ({ data }: ContentProps) => {
         isOpen={isCommentsOpen}
         onClick={handleClick}
         label={data.kids && data.kids.length === 1 ? "comment" : "comments"}
-        icon={faCommentDots}
+        icon={faComment}
       />
       {isCommentsOpen ? <CommentsContainer commentIds={data.kids} /> : null}
     </Wrapper>
