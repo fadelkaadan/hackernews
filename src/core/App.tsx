@@ -8,7 +8,6 @@ import "fontsource-roboto";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Home from "../pages/Home";
-import About from "../pages/About";
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.main.background};
@@ -25,9 +24,6 @@ const App = () => {
           <Wrapper>
             <Header />
             <Switch>
-              <Route path={"/about"}>
-                <About />
-              </Route>
               <Route exact path={"/"}>
                 <Home />
               </Route>

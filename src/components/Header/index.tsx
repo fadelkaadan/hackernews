@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Preferences from "../Preferences";
 
-const Wrapper = styled.div`
+const Wrapper = styled.header`
   width: 100%;
   min-height: 4rem;
   padding: 1rem 0;
