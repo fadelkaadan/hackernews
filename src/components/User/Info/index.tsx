@@ -19,11 +19,10 @@ const Wrapper = styled.div`
   box-sizing: border-box;
   background: linear-gradient(-45deg, #fc466b 0%, #3f5efb 100%);
   background-size: 400% 400%;
-  animation: ${gradientColors} 5s ease infinite;
+  animation: ${gradientColors} 5s ease infinite, ${fadeIn} 0.6s ease;
   padding: 2.5rem;
   margin-top: 2.5rem;
   border-radius: ${(props) => props.theme.main.borderRadius};
-  animation: ${fadeIn} 0.6s ease;
 `;
 
 const Name = styled.h1`
