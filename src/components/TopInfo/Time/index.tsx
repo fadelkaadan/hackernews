@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
+import { covnvertUnixTimeToDate } from "../../../utilities/time";
 
 interface TimeProps {
   time: number;
@@ -14,11 +15,8 @@ const Wrapper = styled.p`
 `;
 
 const Time = ({ time }: TimeProps) => {
-  const covnvertUnixTime = () => {
-    const unixTimestamp = time;
-    const milliseconds = unixTimestamp * 1000;
-    const dateObject = new Date(milliseconds);
-
+  const getTimeAgo = () => {
+    const dateObject = covnvertUnixTimeToDate(time);
     TimeAgo.addLocale(en);
     const timeAgo = new TimeAgo("en-US");
     return timeAgo.format(dateObject, "round");
@@ -26,7 +24,7 @@ const Time = ({ time }: TimeProps) => {
 
   return (
     <Wrapper>
-      <FontAwesomeIcon icon={faClock} /> {covnvertUnixTime()}
+      <FontAwesomeIcon icon={faClock} /> {getTimeAgo()}
     </Wrapper>
   );
 };

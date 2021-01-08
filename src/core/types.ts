@@ -20,3 +20,11 @@ export interface IComment {
   time: number;
   type: string;
 }
+
+export interface IUser {
+  about: string;
+  created: number;
+  id: string;
+  karma: number;
+  submitted: number[];
+}

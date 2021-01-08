@@ -15,3 +15,10 @@ export const fetchItem = async (id: number) => {
     .then(({ data }) => data);
   return result;
 };
+
+export const fetchUserInfo = async (username: string) => {
+  const result = await axios
+    .get(`${BASE_URL}/user/${username}.json`)
+    .then(({ data }) => data);
+  return result;
+};
