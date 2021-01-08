@@ -16,7 +16,7 @@ export const fetchItem = async (id: number) => {
   return result;
 };
 
-export const fetchUser = async (username: string) => {
+export const fetchUserInfo = async (username: string) => {
   const result = await axios
     .get(`${BASE_URL}/user/${username}.json`)
     .then(({ data }) => data);
