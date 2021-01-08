@@ -3,6 +3,7 @@ import {
   FETCH_STORIES_SUCCESS,
   FETCH_STORIES_ERROR,
   INCREMENT_START_AT,
+  RESET_STATE,
   StoriesActionTypes,
   IStory,
 } from "./types";
@@ -43,3 +44,7 @@ const fetchStoriesError = (error: any): StoriesActionTypes => ({
 const incrementStartAt = (): StoriesActionTypes => ({
   type: INCREMENT_START_AT,
 });
+
+export const resetState = (): StoriesActionTypes => ({
+  type: RESET_STATE,
+})

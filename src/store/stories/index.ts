@@ -4,6 +4,7 @@ import {
   FETCH_STORIES_SUCCESS,
   FETCH_STORIES_ERROR,
   INCREMENT_START_AT,
+  RESET_STATE,
 } from "./types";
 import { STORIES_LIMIT } from "../../core/constants";
 
@@ -37,6 +38,11 @@ export default (state = intialState, action: any): StoriesState => {
       return {
         ...state,
         startAt: state.startAt + STORIES_LIMIT,
+      };
+    case RESET_STATE:
+      return {
+        ...state,
+        ...intialState,
       };
     default:
       return state;
