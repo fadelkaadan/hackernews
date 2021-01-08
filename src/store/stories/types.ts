@@ -22,6 +22,7 @@ export const FETCH_STORIES_SUCCESS = "FETCH_STORIES_SUCCESS";
 export const FETCH_STORIES_PENDING = "FETCH_STORIES_PENDING";
 export const FETCH_STORIES_ERROR = "FETCH_STORIES_ERROR";
 export const INCREMENT_START_AT = "INCREMENT_START_AT";
+export const RESET_STATE = "RESET_STATE";
 
 interface IFetchStoriesPendingAction {
   type: string;
@@ -41,8 +42,13 @@ interface IIncrementStartAtAction {
   type: string;
 }
 
+interface IResetStateAction {
+  type: string;
+}
+
 export type StoriesActionTypes =
   | IFetchStoriesPendingAction
   | IFetchStoriesSuccessAction
   | IFetchStoriesErrorAction
-  | IIncrementStartAtAction;
+  | IIncrementStartAtAction
+  | IResetStateAction;
