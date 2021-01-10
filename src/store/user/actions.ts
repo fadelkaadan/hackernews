@@ -2,12 +2,15 @@ import {
   FETCH_USER_PENDING,
   FETCH_USER_SUCCESS,
   FETCH_USER_ERROR,
+  FETCH_STORIES_PENDING,
+  FETCH_STORIES_SUCCESS,
+  FETCH_STORIES_ERROR,
   RESET_STATE,
   ActionTypes,
   IUser,
 } from "./types";
-import { fetchUserInfo } from "../../api/hackernews";
-import { fetchUserStories } from "../stories/actions";
+import { IStory } from "../stories/types";
+import { fetchUserInfo, fetchItem } from "../../api/hackernews";
 
 export const fetchUser = (username: string) => async (dispatch: any) => {
   dispatch(fetchUserPending());
@@ -31,6 +34,40 @@ const fetchUserSuccess = (data: IUser): ActionTypes => ({
 
 const fetchUserError = (error: any): ActionTypes => ({
   type: FETCH_USER_ERROR,
+  error: error,
+});
+
+export const fetchUserStories = (submitted: number[], limit: number) => async (
+  dispatch: any
+) => {
+  dispatch(fetchStoriesPending());
+  try {
+    const fetchedSubmittedItems = submitted.map(async (item, index) => {
+      if (index > 100) return;
+
+      const submittedItem: any = await fetchItem(item);
+      if (submittedItem.type === "story") return submittedItem;
+    });
+
+    const resolvedItems = await Promise.all(fetchedSubmittedItems);
+    const stories = resolvedItems.filter((item) => item);
+    dispatch(fetchStoriesSuccess(stories.slice(0, limit)));
+  } catch (error) {
+    dispatch(fetchStoriesError(error));
+  }
+};
+
+const fetchStoriesPending = (): ActionTypes => ({
+  type: FETCH_STORIES_PENDING,
+});
+
+const fetchStoriesSuccess = (data: IStory[]): ActionTypes => ({
+  type: FETCH_STORIES_SUCCESS,
+  data: data,
+});
+
+const fetchStoriesError = (error: any): ActionTypes => ({
+  type: FETCH_STORIES_ERROR,
   error: error,
 });
 
