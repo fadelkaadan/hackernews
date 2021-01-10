@@ -7,12 +7,14 @@ import {
   IUser,
 } from "./types";
 import { fetchUserInfo } from "../../api/hackernews";
+import { fetchUserStories } from "../stories/actions";
 
 export const fetchUser = (username: string) => async (dispatch: any) => {
   dispatch(fetchUserPending());
   try {
     const user: IUser = await fetchUserInfo(username);
     dispatch(fetchUserSuccess(user));
+    dispatch(fetchUserStories(user.submitted, 20));
   } catch (error) {
     dispatch(fetchUserError(error));
   }
@@ -34,4 +36,4 @@ const fetchUserError = (error: any): ActionTypes => ({
 
 export const resetState = () => ({
   type: RESET_STATE,
-})
+});
