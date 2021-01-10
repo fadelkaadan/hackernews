@@ -13,7 +13,9 @@ const StoriesContainer = () => {
 
   useEffect((): any => {
     dispatch(fetchStories(TOP_STORIES, 0, STORIES_LIMIT));
-    return dispatch(resetState);
+    return () => {
+      dispatch(resetState());
+    };
   }, [dispatch]);
 
   return (
