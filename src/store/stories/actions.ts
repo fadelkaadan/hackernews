@@ -27,6 +27,26 @@ export const fetchStories = (
   }
 };
 
+export const fetchUserStories = (submitted: number[], limit: number) => async (
+  dispatch: any
+) => {
+  dispatch(fetchStoriesPending());
+  try {
+    const fetchedSubmittedItems = submitted.map(async (item, index) => {
+      if (index > 100) return;
+
+      const submittedItem: any = await fetchItem(item);
+      if (submittedItem.type === "story") return submittedItem;
+    });
+
+    const resolvedItems = await Promise.all(fetchedSubmittedItems);
+    const stories = resolvedItems.filter((item) => item);
+    dispatch(fetchStoriesSuccess(stories.slice(0, limit)));
+  } catch (error) {
+    dispatch(fetchStoriesError(error));
+  }
+};
+
 const fetchStoriesPending = (): StoriesActionTypes => ({
   type: FETCH_STORIES_PENDING,
 });

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUser, resetState } from "../../store/user/actions";
 import { RootState } from "../../store/rootReducer";
 import User from "../../components/User";
-import { useParams } from "react-router-dom";
 
-const AuthorContainer = () => {
+const UserContainer = () => {
   const params: any = useParams();
   const dispatch = useDispatch();
   const info = useSelector((state: RootState) => state.user.info);
@@ -23,10 +23,15 @@ const AuthorContainer = () => {
   return (
     <>
       {info && (
-        <User info={info} stories={stories} isPending={isPending} errorMessage={errorMessage} />
+        <User
+          info={info}
+          stories={stories}
+          isPending={isPending}
+          errorMessage={errorMessage}
+        />
       )}
     </>
   );
 };
 
-export default AuthorContainer;
+export default UserContainer;
