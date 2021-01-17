@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { IComment } from "../../../../core/types";
+import { IComment } from "../../core/types";
 
 interface ContentProps {
   data: IComment;

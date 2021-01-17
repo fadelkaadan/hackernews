@@ -4,9 +4,9 @@ import { useDispatch } from "react-redux";
 import {
   setTheme,
   togglePreferences,
-} from "../../../store/preferences/actions";
-import { ThemeEnum } from "../../../store/preferences/types";
-import { fadeIn, gradientColors } from "../../../theme/animations";
+} from "../../store/preferences/actions";
+import { ThemeEnum } from "../../store/preferences/types";
+import { fadeIn, gradientColors } from "../../theme/animations";
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.cards.background};

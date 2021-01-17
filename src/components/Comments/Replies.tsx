@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CommentsContainer from "../../../containers/CommentsContainer";
-import CommentsButton from "../CommentsButton";
+import CommentsContainer from "../../containers/CommentsContainer";
+import CommentsButton from "./CommentsButton";
 import { faReply } from "@fortawesome/free-solid-svg-icons";
 
 interface RepliesProps {

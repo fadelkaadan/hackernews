@@ -1,10 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { togglePreferences } from "../../../store/preferences/actions";
+import { togglePreferences } from "../../store/preferences/actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPalette } from "@fortawesome/free-solid-svg-icons";
-import { fadeIn } from "../../../theme/animations";
+import { fadeIn } from "../../theme/animations";
 
 const Wrapper = styled.button`
   background-color: transparent;
