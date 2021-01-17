@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import TopInfo from "../../../TopInfo";
+import TopInfo from "../TopInfo";
 import Link from "./Link";
-import CommentsButton from "../../../Comments/CommentsButton";
-import CommentsContainer from "../../../../containers/CommentsContainer";
-import { IStory } from "../../../../core/types";
+import CommentsButton from "../Comments/CommentsButton";
+import CommentsContainer from "../../containers/CommentsContainer";
+import { IStory } from "../../core/types";
 import { faComment } from "@fortawesome/free-regular-svg-icons";
 
 interface ContentProps {

@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { fadeIn } from "../../../theme/animations";
+import { fadeIn } from "../../theme/animations";
 import Content from "./Content";
-import TopInfo from "../../TopInfo";
-import { IComment } from "../../../core/types";
-import Replies from "../Replies";
+import TopInfo from "../TopInfo";
+import { IComment } from "../../core/types";
+import Replies from "./Replies";
 
 interface CommentProps {
   data: IComment;

@@ -6,9 +6,9 @@ import {
   faBirthdayCake,
   faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
-import { fadeIn, gradientColors } from "../../../theme/animations";
-import { IUser } from "../../../core/types";
-import { covnvertUnixTimeToDate, months } from "../../../utilities/time";
+import { fadeIn, gradientColors } from "../../theme/animations";
+import { IUser } from "../../core/types";
+import { covnvertUnixTimeToDate, months } from "../../utilities/time";
 
 interface InfoProps {
   data: IUser;
