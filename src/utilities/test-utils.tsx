@@ -5,6 +5,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import configureStore from "redux-mock-store";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import "@testing-library/jest-dom/extend-expect";
 import { ThemeEnum } from "../store/preferences/types";
 import { RootState } from "../store/rootReducer";
 
