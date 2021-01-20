@@ -25,7 +25,7 @@ const CommentsContainer = ({ commentIds }: CommentsContainerProps) => {
       }
     };
     fetchComments();
-
+    
     return () => {
       isSubscribed = false;
     };
