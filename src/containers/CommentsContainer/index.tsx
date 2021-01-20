@@ -12,15 +12,22 @@ const CommentsContainer = ({ commentIds }: CommentsContainerProps) => {
   const [isPending, setIsPending]: any = useState<Boolean>(false);
 
   useEffect(() => {
+    let isSubscribed = true;
     const fetchComments = async () => {
       setIsPending(true);
       const data: Promise<IComment>[] = await commentIds.map(
         async (id: number) => await fetchItem(id)
       );
-      setComments(await Promise.all(data));
-      setIsPending(false);
+      if (isSubscribed) {
+        setComments(await Promise.all(data));
+        setIsPending(false);
+      }
     };
     fetchComments();
+
+    return () => {
+      isSubscribed = false;
+    };
   }, [commentIds]);
 
   return (
