@@ -18,8 +18,9 @@ const CommentsContainer = ({ commentIds }: CommentsContainerProps) => {
       const data: Promise<IComment>[] = await commentIds.map(
         async (id: number) => await fetchItem(id)
       );
+      const resolvedData = await Promise.all(data);
       if (isSubscribed) {
-        setComments(await Promise.all(data));
+        setComments(resolvedData);
         setIsPending(false);
       }
     };
