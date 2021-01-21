@@ -43,4 +43,14 @@ describe("Comment", () => {
     expect(authorOfFirstReply).toBeInTheDocument();
     expect(authorOfSecondReply).toBeInTheDocument();
   });
+
+  it("Should hide replies when button is clicked twice", async () => {
+    render(<Replies data={replyIds} />);
+    const button: HTMLElement = screen.getByRole("button", {name: /replies/i});
+    userEvent.click(button);
+    const authorOfFirstReply = await screen.findByRole('link', {name: /pchristensen/i});
+    expect(authorOfFirstReply).toBeInTheDocument();
+    userEvent.click(button);
+    expect(authorOfFirstReply).not.toBeInTheDocument();
+  });
 });
