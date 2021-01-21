@@ -4,9 +4,9 @@ import Content from "../Content";
 import { IComment } from "../../../core/types";
 
 describe("Comment content", () => {
-
   const fakeContent = "Here is some content";
-  const fakeContentHTML = "<p>Here <span>is</span> some content with <italic>html elements</italic></p>";
+  const fakeContentHTML =
+    "<p>Here <span>is</span> some content with <italic>html elements</italic></p>";
 
   const comment: IComment = {
     by: "fadel",

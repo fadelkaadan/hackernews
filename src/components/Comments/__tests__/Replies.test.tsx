@@ -4,11 +4,18 @@ import { render, screen, RenderResult } from "../../../utilities/test-utils";
 
 import Replies from "../Replies";
 
-describe("Comment", () => {
-
+describe("Replies", () => {
   const commentIds = [12, 3324, 32, 434, 5643, 6];
   const commentId = [2921983];
-  const replyIds = [ 2922097, 2922429, 2924562, 2922709, 2922573, 2922140, 2922141 ];
+  const replyIds = [
+    2922097,
+    2922429,
+    2924562,
+    2922709,
+    2922573,
+    2922140,
+    2922141,
+  ];
 
   it("Should match the snapshot", () => {
     const { container }: RenderResult = render(<Replies data={commentIds} />);
@@ -17,7 +24,9 @@ describe("Comment", () => {
 
   it("Should render CommentsButton", () => {
     render(<Replies data={commentIds} />);
-    const button: HTMLElement = screen.getByRole("button", {name: /replies/i});
+    const button: HTMLElement = screen.getByRole("button", {
+      name: /replies/i,
+    });
     expect(button).toHaveTextContent(`${commentIds.length} replies`);
   });
 
@@ -29,26 +38,38 @@ describe("Comment", () => {
 
   it("Should change title of replies button to hide when clicked", () => {
     render(<Replies data={replyIds} />);
-    const button: HTMLElement = screen.getByRole("button", {name: /replies/i});
+    const button: HTMLElement = screen.getByRole("button", {
+      name: /replies/i,
+    });
     userEvent.click(button);
     expect(button.textContent).toContain("hide");
-  })
+  });
 
   it("Should show replies when button is clicked", async () => {
     render(<Replies data={replyIds} />);
-    const button: HTMLElement = screen.getByRole("button", {name: /replies/i});
+    const button: HTMLElement = screen.getByRole("button", {
+      name: /replies/i,
+    });
     userEvent.click(button);
-    const authorOfFirstReply = await screen.findByRole('link', {name: /pchristensen/i});
-    const authorOfSecondReply = await screen.findByRole('link', {name: /pstuart/i});
+    const authorOfFirstReply = await screen.findByRole("link", {
+      name: /pchristensen/i,
+    });
+    const authorOfSecondReply = await screen.findByRole("link", {
+      name: /pstuart/i,
+    });
     expect(authorOfFirstReply).toBeInTheDocument();
     expect(authorOfSecondReply).toBeInTheDocument();
   });
 
   it("Should hide replies when button is clicked twice", async () => {
     render(<Replies data={replyIds} />);
-    const button: HTMLElement = screen.getByRole("button", {name: /replies/i});
+    const button: HTMLElement = screen.getByRole("button", {
+      name: /replies/i,
+    });
     userEvent.click(button);
-    const authorOfFirstReply = await screen.findByRole('link', {name: /pchristensen/i});
+    const authorOfFirstReply = await screen.findByRole("link", {
+      name: /pchristensen/i,
+    });
     expect(authorOfFirstReply).toBeInTheDocument();
     userEvent.click(button);
     expect(authorOfFirstReply).not.toBeInTheDocument();
