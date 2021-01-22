@@ -13,6 +13,7 @@
 /src/react-app-env.d.ts
 
 # misc
+.idea
 .DS_Store
 .env.local
 .env.development.local

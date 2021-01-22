@@ -1,13 +1,12 @@
 import React from "react";
-import { render, cleanup, RenderResult } from "../../../utilities/test-utils";
+import { render, screen, RenderResult } from "../../../utilities/test-utils";
 import Content from "../Content";
 import { IComment } from "../../../core/types";
 
 describe("Comment content", () => {
-  afterEach(cleanup);
-
   const fakeContent = "Here is some content";
-  const fakeContentHTML = "<p>Here <span>is</span> some content with <italic>html elements</italic></p>";
+  const fakeContentHTML =
+    "<p>Here <span>is</span> some content with <italic>html elements</italic></p>";
 
   const comment: IComment = {
     by: "fadel",
@@ -30,20 +29,18 @@ describe("Comment content", () => {
   };
 
   it("Should match the snapshot", () => {
-    const component: RenderResult = render(<Content data={comment} />);
-    const { container } = component;
+    const { container }: RenderResult = render(<Content data={comment} />);
     expect(container.firstChild).toMatchSnapshot();
   });
 
   it("Should render normal text", () => {
-    const component: RenderResult = render(<Content data={comment} />);
-    const content: HTMLElement = component.getByText(fakeContent);
+    render(<Content data={comment} />);
+    const content: HTMLElement = screen.getByText(fakeContent);
     expect(content.textContent).toEqual(fakeContent);
   });
 
   it("Should render html elements", () => {
-    const component: RenderResult = render(<Content data={commentHTML} />);
-    const { container } = component;
+    const { container }: RenderResult = render(<Content data={commentHTML} />);
     const span = container.querySelector("span");
     expect(span).toBeDefined();
   });

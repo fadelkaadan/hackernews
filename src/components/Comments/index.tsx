@@ -20,13 +20,13 @@ const Wrapper = styled.div`
   grid-column: content;
 `;
 
-const Comments = ({ data }: CommentsProps) => {
+const Comments = ({ data, isPending, errorMessage }: CommentsProps) => {
   const renderComments = () =>
     data && data.map((comment) => <Comment key={comment.id} data={comment} />);
 
   return (
     <Wrapper>
-      {data.length < 1 ? <LoadingIndicator /> : renderComments()}
+      {isPending ? <LoadingIndicator /> : renderComments()}
     </Wrapper>
   );
 };

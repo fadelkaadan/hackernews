@@ -24,8 +24,8 @@ describe("Comment", () => {
 
   it("Should render TopInfo", () => {
     render(<Comment data={comment} />);
-    const author: HTMLElement = screen.getByText(comment.by);
-    expect(author.textContent).toEqual(comment.by);
+    const author: HTMLElement = screen.getByRole("link", {name: comment.by});
+    expect(author).toBeInTheDocument();
   });
 
   it("Should render Content", () => {
