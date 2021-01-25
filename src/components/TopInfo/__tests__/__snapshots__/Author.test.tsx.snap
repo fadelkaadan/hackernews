@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Comment Should match the snapshot 1`] = `
+exports[`Author Should match the snapshot 1`] = `
 <div
   class="sc-bdnylx gSfPKd"
 >
