@@ -12,8 +12,8 @@ describe("Score", () => {
 
   it("Should render score number", () => {
     render(<Score count={count} />);
-    const author: HTMLElement = screen.getByText(`${count}`);
-    expect(author).toBeInTheDocument();
+    const score: HTMLElement = screen.getByText(`${count}`);
+    expect(score).toBeInTheDocument();
   });
 
   it("Should render score icon", () => {
