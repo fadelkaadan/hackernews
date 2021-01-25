@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen, RenderResult } from "../../../utilities/test-utils";
 import Author from "../Author";
 
-describe("Comment", () => {
+describe("Author", () => {
   const name = "fadel";
 
   it("Should match the snapshot", () => {
