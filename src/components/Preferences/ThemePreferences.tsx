@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   animation: ${fadeIn} 0.5s ease;
 `;
 
-const Circle = styled.div`
+const Circle = styled.button`
   height: 3rem;
   width: 3rem;
   border-radius: 50%;
