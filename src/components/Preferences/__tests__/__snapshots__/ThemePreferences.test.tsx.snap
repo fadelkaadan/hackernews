@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThemePreferences Should match the snapshot 1`] = `
+<div
+  class="sc-bdnylx cjjxQC"
+>
+  <button
+    class="sc-gtssRu sc-dlnjPT hOqmoc fKGzSm"
+  />
+  <button
+    class="sc-gtssRu sc-hKFyIo hOqmoc ggcmdP"
+  />
+  <button
+    class="sc-gtssRu sc-eCApGN hOqmoc iIdOnQ"
+  />
+</div>
+`;
