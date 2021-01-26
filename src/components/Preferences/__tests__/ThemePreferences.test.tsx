@@ -12,6 +12,6 @@ describe("ThemePreferences", () => {
   it("Should render 3 preference buttons", () => {
     render(<ThemePreferences />);
     const buttons = screen.getAllByRole("button");
-    expect(buttons.length).toBe(3);
+    expect(buttons.length).toBe(2);
   });
 });
