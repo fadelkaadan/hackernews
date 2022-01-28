@@ -8,7 +8,7 @@ import {
 
 export const togglePreferences = (): ThemeActionTypes => ({
   type: TOGGLE_PREFERENCES,
-}) 
+});
 
 export const setTheme = (theme: ThemeEnum): ThemeActionTypes => ({
   type: SET_THEME,

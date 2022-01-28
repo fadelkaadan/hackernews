@@ -7,9 +7,11 @@ import {
   ThemeEnum,
 } from "./types";
 
+const localTheme: any = localStorage.getItem("theme");
+
 const initialState: ThemeState = {
   isPreferencesClicked: false,
-  theme: ThemeEnum.NIGHT,
+  theme: localTheme ? localTheme : ThemeEnum.NIGHT,
   isOneColumnLayout: true,
 };
 
@@ -21,6 +23,7 @@ export default (state = initialState, action: ThemeActionTypes): ThemeState => {
         isPreferencesClicked: !state.isPreferencesClicked,
       };
     case SET_THEME:
+      localStorage.setItem("theme", action.data);
       return {
         ...state,
         theme: action.data,
