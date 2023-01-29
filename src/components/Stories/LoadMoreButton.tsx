@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { fetchStories } from "../../store/stories/actions";
 import { RootState } from "../../store/rootReducer";
@@ -7,6 +7,7 @@ import { gradientColors } from "../../theme/animations";
 import AnimatedButton from "../AnimatedButton";
 import LoadingIndicator from "../LoadingIndicator";
 import { STORIES_LIMIT, TOP_STORIES } from "../../core/constants";
+import { useAppDispatch } from "../../core/hooks";
 
 const Wrapper = styled(AnimatedButton)`
   width: 15rem;
@@ -23,7 +24,7 @@ const Wrapper = styled(AnimatedButton)`
 `;
 
 const LoadMoreButton = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const startAt = useSelector((state: RootState) => state.stories.startAt);
   const isPending = useSelector((state: RootState) => state.stories.pending);
 

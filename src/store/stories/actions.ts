@@ -8,12 +8,13 @@ import {
   IStory,
 } from "./types";
 import { fetchStoryIds, fetchItem } from "../../api/hackernews";
+import { AppDispatch } from "..";
 
 export const fetchStories = (
   category: string,
   startAt: number,
   limit: number
-) => async (dispatch: any) => {
+) => async (dispatch: AppDispatch) => {
   dispatch(fetchStoriesPending());
   try {
     const storyIds = await fetchStoryIds(category);
@@ -28,7 +29,7 @@ export const fetchStories = (
 };
 
 export const fetchUserStories = (submitted: number[], limit: number) => async (
-  dispatch: any
+  dispatch: AppDispatch
 ) => {
   dispatch(fetchStoriesPending());
   try {

@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { fetchUser, resetState } from "../../store/user/actions";
 import { RootState } from "../../store/rootReducer";
 import User from "../../components/User";
+import { useAppDispatch } from "../../core/hooks";
 
 const UserContainer = () => {
   const params: any = useParams();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const info = useSelector((state: RootState) => state.user.info);
   const isPending = useSelector((state: RootState) => state.user.pending);
   const errorMessage = useSelector((state: RootState) => state.user.error);
