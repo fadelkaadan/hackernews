@@ -11,8 +11,9 @@ import {
 } from "./types";
 import { IStory } from "../stories/types";
 import { fetchUserInfo, fetchItem } from "../../api/hackernews";
+import { AppDispatch } from "..";
 
-export const fetchUser = (username: string) => async (dispatch: any) => {
+export const fetchUser = (username: string) => async (dispatch: AppDispatch) => {
   dispatch(fetchUserPending());
   try {
     const user: IUser = await fetchUserInfo(username);
@@ -38,7 +39,7 @@ const fetchUserError = (error: any): ActionTypes => ({
 });
 
 export const fetchUserStories = (submitted: number[], limit: number) => async (
-  dispatch: any
+  dispatch: AppDispatch
 ) => {
   dispatch(fetchStoriesPending());
   try {

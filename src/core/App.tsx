@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import styled from "styled-components";
 import ThemeProvider from "../theme/ThemeProvider";
@@ -26,14 +26,10 @@ const App = () => {
           <Wrapper>
             <ScrollToTop />
             <Header />
-            <Switch>
-              <Route exact path={"/users/:id"}>
-                <User />
-              </Route>
-              <Route exact path={"/"}>
-                <Home />
-              </Route>
-            </Switch>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/users/:id" element={<User />} />
+            </Routes>
             <Footer />
           </Wrapper>
         </ThemeProvider>
